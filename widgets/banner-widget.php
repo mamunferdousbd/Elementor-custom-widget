@@ -114,17 +114,35 @@ class Banner_widget extends \Elementor\Widget_Base{
                 'label_block'=>true,
             ]
         );
-
-        
-        
-        
-
-        
-        
-
         $this->end_controls_section();
 
         
+
+        
+    }
+    protected function render(){
+        $settings = $this->get_settings_for_display();
+        $sub_heading = $settings['sub_heading'];
+        $heading = $settings['heading'];
+        $description = $settings['description'];
+        $btn_one_text = $settings['btn_one_text'];
+        $btn_one_link = $settings['btn_one_link'];
+        $btn_two_text = $settings['btn_two_text'];
+        $btn_two_link = $settings['btn_two_link'];
+
+        ?>
+            <div class="slider">
+                <h4><?php echo $sub_heading;?></h4>
+                <h1><?php echo $heading;?></h1>
+                <p><?php echo $description;?></p>
+                <a class="box_btn"  href="<?php echo $btn_one_link?>"><?php echo $btn_one_text;?></a>
+                <a class="border_btn"  href="<?php echo $btn_two_link?>"><?php echo $btn_two_text?></a>
+            </div>
+
+
+        <?php
+
+
     }
     
 
