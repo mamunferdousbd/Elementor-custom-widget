@@ -96,9 +96,10 @@ class Mamun_Test_widget extends \Elementor\Widget_Base{
 
         $this->end_controls_section();
 
-        protected function render(){
-            $settings= $this-> get_settings_for_display();
-        }
+        
+    }
+    protected function render(){
+        $settings= $this-> get_settings_for_display();
     }
 
     
