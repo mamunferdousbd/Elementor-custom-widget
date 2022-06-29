@@ -58,7 +58,7 @@ class Mamun_Test_widget extends \Elementor\Widget_Base{
         );
         
         $this->add_control(
-			'icons',
+			'icon',
 			[
 				'label' => esc_html__( 'Icon', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
@@ -93,6 +93,14 @@ class Mamun_Test_widget extends \Elementor\Widget_Base{
 				],
 			]
 		);
+        $this->add_control(
+            'gallery',
+            [
+                'label'=>esc_html__('Add Image','picchi-extension'),
+                'type'=> \Elementor\Controls_Manager::GALLERY,
+                'default'=>[],
+            ]
+        );
 
         $this->end_controls_section();
 
@@ -100,6 +108,19 @@ class Mamun_Test_widget extends \Elementor\Widget_Base{
     }
     protected function render(){
         $settings= $this-> get_settings_for_display();
+        echo '<h2>'.$settings['title'] .'</h2>';
+        echo '<p>'.$settings['description'].'</p>';
+        ?>
+        <div class="my-icon-wrapper">
+        <?php \Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+        </div>
+        <?php
+        foreach ( $settings['gallery'] as $image ) {
+			echo '<img src="' . esc_attr( $image['url'] ) . '">';
+		}
+        
+        
+
     }
 
     
