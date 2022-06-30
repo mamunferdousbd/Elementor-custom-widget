@@ -116,22 +116,134 @@ class Banner_widget extends \Elementor\Widget_Base{
         );
         $this->end_controls_section();
 
+        // Style Tab
+        $this->start_controls_section(
+            'sub_heading_section',
+            [
+                'label'=>esc_html__( 'Sub Heading Style','picchi-extension' ),
+                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+
+            ]
+        );
+        // Sub Heading Color
+        $this->add_control(
+			'sub_heading_color',
+			[
+				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#fff',
+				'selectors' => [
+					'{{WRAPPER}} .banner h4' => 'color: {{VALUE}}',
+				],
+			]
+		);
+        // Sub Heading Font Family
+        $this->add_control(
+			'sub_heading_font_family',
+			[
+				'label' => esc_html__( 'Font Family', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::FONT,
+				'default' => "'Open Sans', sans-serif",
+				'selectors' => [
+					'{{WRAPPER}} .banner h4' => 'font-family: {{VALUE}}',
+				],
+                'seperator'=>'after'
+			]
+		);
+        $this->end_controls_section();
+
+        // Heading Style
+        $this->start_controls_section(
+            'heading_section',
+            [
+                'label'=>esc_html__( 'Heading Style','picchi-extension' ),
+                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+
+            ]
+        );
+        // Heading Color
+        $this->add_control(
+			'heading_color',
+			[
+				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#fff',
+				'selectors' => [
+					'{{WRAPPER}} .banner h1' => 'color: {{VALUE}}',
+				],
+			]
+		);
+        //  Heading Font Family
+        $this->add_control(
+			'heading_font_family',
+			[
+				'label' => esc_html__( 'Font Family', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::FONT,
+				'default' => "'Open Sans', sans-serif",
+				'selectors' => [
+					'{{WRAPPER}} .banner h1' => 'font-family: {{VALUE}}',
+				],
+                'seperator'=>'after'
+			]
+		);
+        $this->end_controls_section();
+
+        // Description Style
+        $this->start_controls_section(
+            'description_section',
+            [
+                'label'=>esc_html__( 'Description Style','picchi-extension' ),
+                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+
+            ]
+        );
+        // Description Color
+        $this->add_control(
+			'description_color',
+			[
+				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#fff',
+				'selectors' => [
+					'{{WRAPPER}} .banner p' => 'color: {{VALUE}}',
+				],
+			]
+		);
+    
+        // Description Font Family
+        $this->add_control(
+			'description_font_family',
+			[
+				'label' => esc_html__( 'Font Family', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::FONT,
+				'default' => "'Open Sans', sans-serif",
+				'selectors' => [
+					'{{WRAPPER}} .banner p' => 'font-family: {{VALUE}}',
+				],
+                'seperator'=>'after'
+			]
+		);
+        $this->end_controls_section();
+        // 
+        
+
         
 
         
     }
+
     protected function render(){
         $settings = $this->get_settings_for_display();
         $sub_heading = $settings['sub_heading'];
         $heading = $settings['heading'];
         $description = $settings['description'];
         $btn_one_text = $settings['btn_one_text'];
-        $btn_one_link = $settings['btn_one_link'];
+        $btn_one_link = $settings['btn_one_link']['url'];
         $btn_two_text = $settings['btn_two_text'];
-        $btn_two_link = $settings['btn_two_link'];
+        $btn_two_link = $settings['btn_two_link']['url'];
 
         ?>
-            <div class="slider">
+            <div class="banner">
                 <h4><?php echo $sub_heading;?></h4>
                 <h1><?php echo $heading;?></h1>
                 <p><?php echo $description;?></p>

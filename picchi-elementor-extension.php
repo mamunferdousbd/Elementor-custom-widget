@@ -281,8 +281,12 @@ final class Elementor_Picchi_Extension {
 
 	// Custom CSS
 	public function widget_styles() {
-		wp_register_style( 'picchi-extension-style', plugins_url( 'style.css', __FILE__ ) );
+		wp_register_style( 'picchi-extension-fonts', plugins_url( 'https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap', __FILE__ ) );
+
+		wp_register_style( 'picchi-extension-style', plugins_url( 'css/style.css', __FILE__ ) );
+
 		wp_enqueue_style('picchi-extension-style');
+		wp_enqueue_style('picchi-extension-fonts');
 	}	
 
     // Custom JS

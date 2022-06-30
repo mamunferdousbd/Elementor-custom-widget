@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+/* ==================
+    Banner CSS
+=================== */
+.banner{
+    text-align: center;
+    color: #fff;
+}
+.banner h4{
+font-weight: 400;
+margin-bottom: 0;
+}
+.banner h1{
+    font-size: 50px;
+    text-transform: capitalize;
+    margin: 20px;
+    font-weight: 600;
+}
+.banner p{
+    color: #bbb;
+    font-size: 18px;
+}
+.banner a{
+    margin: 0 5px;
+}
+.box_btn{
+    display: inline-block;
+    background-color: tomato;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 7px;
+}
+.border_btn{
+    display: inline-block;
+    color: #fff;
+    border: 1px solid tomato;
+    border-radius: 7px;
+    padding: 9px 30px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ==================
+    Banner CSS
+=================== */
