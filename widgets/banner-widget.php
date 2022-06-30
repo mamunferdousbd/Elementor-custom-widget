@@ -218,6 +218,112 @@ class Banner_widget extends \Elementor\Widget_Base{
 				'selector' => '{{WRAPPER}} .banner p',
 			]
 		);
+        // Button One 
+        $this->add_control(
+			'button_one_style',
+			[
+				'label' => esc_html__( 'Button 1', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+        $this->start_controls_tabs(
+			'button_1_style_tabs'
+		);
+        // Normal
+		$this->start_controls_tab(
+			'button_1_style_normal_tab',
+			[
+				'label' => esc_html__( 'Normal', 'picchi-extension' ),
+			]
+		);
+        // Button 1 Color
+        $this->add_control(
+			'btnnor_color',
+			[
+				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#FFF',
+				'selectors' => [
+					'{{WRAPPER}} .box_btn' => 'color: {{VALUE}}',
+				],
+			]
+		);
+        // Button 1 Background Color
+        $this->add_control(
+			'btnnorbg_color',
+			[
+				'label' => esc_html__( 'Background Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#FFF',
+				'selectors' => [
+					'{{WRAPPER}} .box_btn' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+    
+        // Button 1 Typography
+        
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'btn1_typography',
+				'selector' => '{{WRAPPER}} .box_btn',
+			]
+		);
+
+        $this->end_controls_tab();
+
+
+        // Hover 
+        $this->start_controls_tab(
+			'button_one_style_hover_tab',
+			[
+				'label' => esc_html__( 'Hover', 'picchi-extension' ),
+			]
+		);
+        // Button 1 Color
+        $this->add_control(
+			'btn1hover_color',
+			[
+				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#FFF',
+				'selectors' => [
+					'{{WRAPPER}} .box_btn' => 'color: {{VALUE}}',
+				],
+			]
+		);
+        // Button 1 Background Color
+        $this->add_control(
+			'btn1bghover_color',
+			[
+				'label' => esc_html__( 'Background Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#FFF',
+				'selectors' => [
+					'{{WRAPPER}} .box_btn' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+    
+        // Button 1 Typography
+        
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'btn1hover_typography',
+				'selector' => '{{WRAPPER}} .box_btn',
+			]
+		);
+
+
+         $this->end_controls_tab();
+
+        $this->end_controls_tab();
+        
+
+
         $this->end_controls_section();
         
 
