@@ -116,15 +116,26 @@ class Banner_widget extends \Elementor\Widget_Base{
         );
         $this->end_controls_section();
 
-        // Style Tab
+        /*===================
+            Style Tab
+        ===================== */
         $this->start_controls_section(
-            'sub_heading_section',
+            'style_section',
             [
-                'label'=>esc_html__( 'Sub Heading Style','picchi-extension' ),
+                'label'=>esc_html__( 'Style','picchi-extension' ),
                 'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
 
             ]
         );
+        $this->add_control(
+			'sub_title',
+			[
+				'label' => esc_html__( 'Sub Title', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+        
         // Sub Heading Color
         $this->add_control(
 			'sub_heading_color',
@@ -147,20 +158,18 @@ class Banner_widget extends \Elementor\Widget_Base{
 				'selectors' => [
 					'{{WRAPPER}} .banner h4' => 'font-family: {{VALUE}}',
 				],
-                'seperator'=>'after'
+                
 			]
 		);
-        $this->end_controls_section();
-
-        // Heading Style
-        $this->start_controls_section(
-            'heading_section',
-            [
-                'label'=>esc_html__( 'Heading Style','picchi-extension' ),
-                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
-
-            ]
-        );
+        $this->add_control(
+			'title',
+			[
+				'label' => esc_html__( 'Title', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+        
         // Heading Color
         $this->add_control(
 			'heading_color',
@@ -183,27 +192,25 @@ class Banner_widget extends \Elementor\Widget_Base{
 				'selectors' => [
 					'{{WRAPPER}} .banner h1' => 'font-family: {{VALUE}}',
 				],
-                'seperator'=>'after'
+                
 			]
 		);
-        $this->end_controls_section();
+        $this->add_control(
+			'description_style',
+			[
+				'label' => esc_html__( 'Description', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
 
-        // Description Style
-        $this->start_controls_section(
-            'description_section',
-            [
-                'label'=>esc_html__( 'Description Style','picchi-extension' ),
-                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
-
-            ]
-        );
         // Description Color
         $this->add_control(
 			'description_color',
 			[
 				'label' => esc_html__( 'Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#fff',
+                'default'=>'#FFF',
 				'selectors' => [
 					'{{WRAPPER}} .banner p' => 'color: {{VALUE}}',
 				],
@@ -220,11 +227,10 @@ class Banner_widget extends \Elementor\Widget_Base{
 				'selectors' => [
 					'{{WRAPPER}} .banner p' => 'font-family: {{VALUE}}',
 				],
-                'seperator'=>'after'
+            
 			]
 		);
         $this->end_controls_section();
-        // 
         
 
         
