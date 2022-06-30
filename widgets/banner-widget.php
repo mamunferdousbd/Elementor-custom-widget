@@ -149,18 +149,14 @@ class Banner_widget extends \Elementor\Widget_Base{
 			]
 		);
         // Sub Heading Font Family
-        $this->add_control(
-			'sub_heading_font_family',
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label' => esc_html__( 'Font Family', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::FONT,
-				'default' => "'Open Sans', sans-serif",
-				'selectors' => [
-					'{{WRAPPER}} .banner h4' => 'font-family: {{VALUE}}',
-				],
-                
+				'name' => 'sub_title_typography',
+				'selector' => '{{WRAPPER}} .banner h4',
 			]
 		);
+        
         $this->add_control(
 			'title',
 			[
@@ -182,19 +178,15 @@ class Banner_widget extends \Elementor\Widget_Base{
 				],
 			]
 		);
-        //  Heading Font Family
-        $this->add_control(
-			'heading_font_family',
+        //  Heading Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label' => esc_html__( 'Font Family', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::FONT,
-				'default' => "'Open Sans', sans-serif",
-				'selectors' => [
-					'{{WRAPPER}} .banner h1' => 'font-family: {{VALUE}}',
-				],
-                
+				'name' => 'title_typography',
+				'selector' => '{{WRAPPER}} .banner h1',
 			]
 		);
+        
         $this->add_control(
 			'description_style',
 			[
@@ -217,17 +209,13 @@ class Banner_widget extends \Elementor\Widget_Base{
 			]
 		);
     
-        // Description Font Family
-        $this->add_control(
-			'description_font_family',
+        // Description Typography
+        
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label' => esc_html__( 'Font Family', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::FONT,
-				'default' => "'Open Sans', sans-serif",
-				'selectors' => [
-					'{{WRAPPER}} .banner p' => 'font-family: {{VALUE}}',
-				],
-            
+				'name' => 'description_typography',
+				'selector' => '{{WRAPPER}} .banner p',
 			]
 		);
         $this->end_controls_section();
