@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Mamun Widget 
+ * Plugin Name: Mamun Custom Widget Elementor 
  * Description: Custom Elementor extension which includes custom widgets.
  * Plugin URI:  https://mamunferdousbd.com/
  * Version:     1.0.0
@@ -247,11 +247,15 @@ final class Elementor_Picchi_Extension {
 
 		require_once( __DIR__ . '/widgets/test-widget.php' );
 		require_once( __DIR__ . '/widgets/banner-widget.php' );
+		require_once( __DIR__ . '/widgets/heading-widget.php' );
+		require_once( __DIR__ . '/widgets/about-widget.php' );
 
 		// added by EWA - EWA own Register widgets, loading all widget names
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Mamun_Test_Widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Banner_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Heading_widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \About_widget() );
 
 	}
 
@@ -272,7 +276,6 @@ final class Elementor_Picchi_Extension {
 		*
 		// Include Control files
 		require_once( __DIR__ . '/controls/test-control.php' );
-
 		// Register control
 		\Elementor\Plugin::$instance->controls_manager->register_control( 'control-type-', new \Test_Control() );
 		*/
