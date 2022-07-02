@@ -149,6 +149,10 @@ body {
     font-size: 36px;
 }
 
+.about-text {
+    padding-bottom: 50px;
+}
+
 .about-text h4 {
     text-transform: capitalize;
     font-size: 28px;
@@ -190,6 +194,10 @@ body {
 
 .about-text a {
     margin-top: 20px;
+    color: #FFF;
+    background-color: #e16038;
+    padding: 10px 30px;
+    border-radius: 7px;
 }
 
 .about-img img {
