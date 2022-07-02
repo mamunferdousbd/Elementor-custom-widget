@@ -247,11 +247,13 @@ final class Elementor_Picchi_Extension {
 
 		require_once( __DIR__ . '/widgets/test-widget.php' );
 		require_once( __DIR__ . '/widgets/banner-widget.php' );
+		require_once( __DIR__ . '/widgets/heading-widget.php' );
 
 		// added by EWA - EWA own Register widgets, loading all widget names
 
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Mamun_Test_Widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Banner_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Heading_widget() );
 
 	}
 
