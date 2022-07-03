@@ -141,16 +141,15 @@ body {
 .single-about a {
   text-transform: capitalize;
   margin-top: 10px;
-  display: block;
+  display: inline-block;
   color: tomato;
 }
 
 .single-about i {
   font-size: 36px;
 }
-
-.about-text {
-  padding-bottom: 50px;
+.pt-100{
+  padding-top: 100px;
 }
 
 .about-text h4 {
