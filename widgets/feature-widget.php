@@ -267,6 +267,11 @@ class Feature_widget extends \Elementor\Widget_Base{
         
 
         ?>
+		<style>
+			.features-1::before, .features-2::before{
+				background-image:url('http://localhost/pichhi/wp-content/uploads/2022/07/priscilla.jpg')
+			}
+		</style>
     	<div class="features features-1">
 			
 		<div class="col-xl-6">

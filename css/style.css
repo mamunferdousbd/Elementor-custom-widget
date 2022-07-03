@@ -218,3 +218,112 @@ body {
   right: -10px;
   bottom: -10px;
 }
+/*==========================
+ Features Area CSS 
+ ==========================*/
+
+.single-feature ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  float: left;
+  width: 50%;
+  margin: 15px 0;
+}
+.features {
+  position: relative;
+  background-color: #f8f9fa;
+}
+.features-1::before {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 100%;
+	background-image: url("../img/feature-1.jpg");
+	right: 0;
+	top: 0;
+	background-size: cover;
+	background-position: center;
+}
+.features-2::before {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 100%;
+	background-image: url("../img/feature-2.jpg");
+	left: 0;
+	top: 0;
+	background-size: cover;
+	background-position: center;
+}
+.features-1 {
+  position: relative;
+}
+.single-feature {
+	padding: 100px;
+	overflow: hidden;
+}
+.single-feature h4 {
+	text-transform: uppercase;
+	font-size: 34px;
+	position: relative;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	font-weight: 700;
+}
+.single-feature h4:before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-color: tomato;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20px;
+}
+.single-feature p {
+  margin-bottom: 20px;
+}
+.features-1::after {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	background-color: #333;
+	opacity: .8;
+}
+.features-2::after {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #333;
+	opacity: .8;
+}
+.single-feature h6 {
+	color: #777;
+	text-transform: lowercase;
+	font-size: 16px;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+.feature-box h5 {
+	font-size: 22px;
+	text-transform: capitalize;
+	font-weight: 600;
+	margin: 15px 0;
+}
+.feature-box {
+  text-align: left;
+  margin: 25px 0;
+}
+.feature-box i {
+  font-size: 25px;
+}
+.single-feature a.box-btn {
+	margin-top: 30px;
+}
