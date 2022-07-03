@@ -93,6 +93,54 @@ class About_widget extends \Elementor\Widget_Base{
 				
 			]
 		);
+        $repeater = new \Elementor\Repeater();
+        $repeater->add_control(
+			'about_feature_title', [
+				'label' => esc_html__( 'About Feature Title', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'About Feature Title' , 'picchi-extension' ),
+				'label_block' => true,
+			]
+		);
+        $repeater->add_control(
+			'about_feature_desc', [
+				'label' => esc_html__( 'About Feature Description', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => esc_html__( 'About Feature Description' , 'picchi-extension' ),
+				'label_block' => true,
+			]
+		);
+         // About Feature Button Text
+         $repeater->add_control(
+            'about_feature_btn_text',
+            [
+                'label'=>esc_html__( 'About Feature Button Text','picchi-extension' ),
+                'type'=>  \Elementor\Controls_Manager::TEXT,
+                'placeholder'=>esc_html__('Write Your Button Text Here.','picchi-extension'),
+                'seperator'=>'after',
+                'label_block'=>true,
+            ]
+        );
+        // About Feature Button  Link
+        $repeater->add_control(
+            'about_feature_btn_link',
+            [
+                'label'=>esc_html__( 'About Feature Button Link','picchi-extension' ),
+                'type'=>  \Elementor\Controls_Manager::URL,
+                'placeholder'=>esc_html__('Write Your Button Link Here.','picchi-extension'),
+                'seperator'=>'after',
+                'label_block'=>true,
+            ]
+        );
+        $this->add_control(
+			'about_features_list',
+			[
+				'label' => esc_html__( 'Repeater List', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
+				'title_field' => '{{{ about_feature_title }}}',
+			]
+		);
     
         $this->end_controls_section();
 
@@ -175,15 +223,15 @@ class About_widget extends \Elementor\Widget_Base{
             Button One
         ============================= */
         $this->add_control(
-			'btn1_heading',
+			'about_btn_title',
 			[
-				'label' => esc_html__('Button One','picchi-extension' ),
+				'label' => esc_html__('About Button','picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
         $this->start_controls_tabs(
-			'style_tabs_btn1'
+			'style_tabs_about_btn'
 		);
 
         /*===================
@@ -191,7 +239,7 @@ class About_widget extends \Elementor\Widget_Base{
          ===================*/
 
 		$this->start_controls_tab(
-			'btn1_normal_tab',
+			'about_btn_normal_tab',
 			[
 				'label' => esc_html__( 'Normal','picchi-extension' ),
 			]
@@ -535,30 +583,21 @@ class About_widget extends \Elementor\Widget_Base{
 				</div>
 			</div>
             <div class="row pt-100">
+                <?php
+                if ( $settings['about_features_list'] ) {
+                    foreach (  $settings['about_features_list'] as $item ) {
+                ?>
 				<div class="col-xl-4">
 					<div class="single-about">
-						<i class="far fa-newspaper"></i>
-						<h4>our mission</h4>
-						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latinin contaversy. </p>
-						<a href="">read more <i class="fa fa-long-arrow-right"></i></a>
+						<h4><?php echo $item['about_feature_title'];?></h4>
+						<p><?php echo $item['about_feature_desc'];?> </p>
+						<a href="<?php echo $item['about_feature_btn_link']['url'];?>"><?php echo $item['about_feature_btn_text'];?></a>
 					</div>
 				</div>
-				<div class="col-xl-4">
-					<div class="single-about">
-						<i class="far fa-newspaper"></i>
-						<h4>our vission</h4>
-						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latinin contaversy. </p>
-						<a href="">read more <i class="fa fa-long-arrow-right"></i></a>
-					</div>
-				</div>
-				<div class="col-xl-4">
-					<div class="single-about">
-						<i class="far fa-newspaper"></i>
-						<h4>our history</h4>
-						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latinin contaversy. </p>
-						<a href="">read more <i class="fa fa-long-arrow-right"></i></a>
-					</div>
-				</div>
+                <?php
+                    }
+                }
+                ?>
 			</div>
 
 

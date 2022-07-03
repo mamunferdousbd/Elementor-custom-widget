@@ -1,85 +1,99 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Raleway', sans-serif;
+body {
+  font-family: 'Raleway', sans-serif;
 }
+
 
 /* ==================
-    Banner CSS
+  Banner CSS
 =================== */
-.banner{
-    text-align: center;
-    color: #fff;
+
+.banner {
+  text-align: center;
+  color: #fff;
 }
-.banner h4{
-font-weight: 400;
-margin-bottom: 0;
+
+.banner h4 {
+  font-weight: 400;
+  margin-bottom: 0;
 }
-.banner h1{
-    font-size: 50px;
-    text-transform: capitalize;
-    margin: 20px;
-    font-weight: 600;
+
+.banner h1 {
+  font-size: 50px;
+  text-transform: capitalize;
+  margin: 20px;
+  font-weight: 600;
 }
-.banner p{
-    color: #bbb;
-    font-size: 18px;
+
+.banner p {
+  color: #bbb;
+  font-size: 18px;
 }
-.banner a{
-    margin: 0 5px;
+
+.banner a {
+  margin: 0 5px;
 }
-.box_btn{
-    display: inline-block;
-    background-color: tomato;
-    color: #fff;
-    padding: 10px 30px;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 7px;
+
+.box_btn {
+  display: inline-block;
+  background-color: tomato;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 7px;
 }
-.border_btn{
-    display: inline-block;
-    color: #fff;
-    border: 1px solid tomato;
-    border-radius: 7px;
-    padding: 9px 30px;
-    font-size: 18px;
-    font-weight: 500;
+
+.border_btn {
+  display: inline-block;
+  color: #fff;
+  border: 1px solid tomato;
+  border-radius: 7px;
+  padding: 9px 30px;
+  font-size: 18px;
+  font-weight: 500;
 }
+
 
 /* =====================
-    Section Heading CSS
+  Section Heading CSS
 ======================= =*/
 
-
 .section-title h4 {
-	font-size: 16px;
-	font-weight: 600;
-	color: #777;
-    margin-bottom: -10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: -10px;
 }
+
 .section-title h2 {
-	font-size: 32px;
-	text-transform: capitalize;
-	margin: 15px 0;
-	display: inline-block;
-	position: relative;
-	font-weight: 700;
-	padding-bottom: 15px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+  font-size: 32px;
+  text-transform: capitalize;
+  margin: 15px 0;
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
+
 .section-title p {
-	font-weight: 300;
-	font-size: 14px;
+  font-weight: 300;
+  font-size: 14px;
 }
-.black-bg .section-title h2, .black-bg .section-title h4, .black-bg .section-title p {
-  color:#fff
+
+.black-bg .section-title h2,
+.black-bg .section-title h4,
+.black-bg .section-title p {
+  color: #fff
 }
+
 .section-title h2:before {
   position: absolute;
   content: " ";
@@ -90,6 +104,7 @@ margin-bottom: 0;
   left: 50%;
   margin-left: -75px;
 }
+
 .section-title h2:after {
   position: absolute;
   content: " ";
@@ -101,81 +116,106 @@ margin-bottom: 0;
   left: 50%;
   margin-left: -40px;
 }
+
 .section-title {
   margin-bottom: 70px;
   text-align: center;
 }
+
+
 /* =====================
-    About Widget CSS
+  About Widget CSS
 ======================= =*/
+
 .single-about i {
-    font-size: 25px;
-  }
-  .single-about h4 {
-      margin: 20px 0;
-      font-weight: 500;
-      text-transform: capitalize;
-      font-size: 22px;
-  }
-  .single-about a {
-    text-transform: capitalize;
-    margin-top: 10px;
-    display: block;
-    color: tomato;
-  }
-  .single-about i {
-      font-size: 36px;
-  }
-  
-  .about-text h4 {
-    text-transform: capitalize;
-    font-size: 28px;
-    margin-bottom: 10px;
-    font-weight: 700;
-  }
-  .about-text p {
-    margin-bottom: 5px;
-  }
-  .about-text ul{
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    float: left;
-    width: 50%;
-    margin: 15px 0;
-  }
-  .about-text ul li {
-      margin-bottom: 10px;
-      color: #646f79;
-      font-size:14px;
-  }
-  .about-text ul li, .single-feature ul li {
-      margin-bottom: 10px;
-      color: #646f79;
-      font-size:14px;
-  }
-  .about-text ul li i, .single-feature ul li i {
-    padding-right: 5px;
-    color:#646f79
-  }
-  .about-text a{
-    margin-top: 20px;
-  }
-  
-  .about-img img {
-    width: 100%;
-  }
-  .about-img {
-    position: relative;
-    z-index: 2;
-  }
-  .about-img:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: tomato;
-    z-index: -1;
-    right: -10px;
-    bottom: -10px;
-  }
+  font-size: 25px;
+}
+
+.single-about h4 {
+  margin: 20px 0;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 22px;
+}
+
+.single-about a {
+  text-transform: capitalize;
+  margin-top: 10px;
+  display: block;
+  color: tomato;
+}
+
+.single-about i {
+  font-size: 36px;
+}
+
+.about-text {
+  padding-bottom: 50px;
+}
+
+.about-text h4 {
+  text-transform: capitalize;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.about-text p {
+  margin-bottom: 5px;
+}
+
+.about-text ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  float: left;
+  width: 50%;
+  margin: 15px 0;
+}
+
+.about-text ul li {
+  margin-bottom: 10px;
+  color: #646f79;
+  font-size: 14px;
+}
+
+.about-text ul li,
+.single-feature ul li {
+  margin-bottom: 10px;
+  color: #646f79;
+  font-size: 14px;
+}
+
+.about-text ul li i,
+.single-feature ul li i {
+  padding-right: 5px;
+  color: #646f79
+}
+
+.about-text a {
+  margin-top: 20px;
+  color: #FFF;
+  background-color: #e16038;
+  padding: 10px 30px;
+  border-radius: 7px;
+}
+
+.about-img img {
+  width: 100%;
+}
+
+.about-img {
+  position: relative;
+  z-index: 2;
+}
+
+.about-img:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+  z-index: -1;
+  right: -10px;
+  bottom: -10px;
+}
