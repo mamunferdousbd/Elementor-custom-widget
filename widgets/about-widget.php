@@ -182,6 +182,7 @@ class About_widget extends \Elementor\Widget_Base{
 
             ]
         );
+		// About Title
         $this->add_control(
 			'about_title',
 			[
@@ -211,7 +212,7 @@ class About_widget extends \Elementor\Widget_Base{
 				'selector' => '{{WRAPPER}} .about-text h4',
 			]
 		);
-        
+        // About Description Heading
         $this->add_control(
 			'about_description_heading',
 			[
@@ -242,7 +243,7 @@ class About_widget extends \Elementor\Widget_Base{
 			]
 		);
         /*==========================
-           About  Button One
+           About  Button 
         ============================= */
         $this->add_control(
 			'about_btn_title',
@@ -257,9 +258,9 @@ class About_widget extends \Elementor\Widget_Base{
 			'style_tabs_about_btn'
 		);
 
-        /*===================
-        Button One Normal Style
-         ===================*/
+        /*========================
+        About Button Normal Style
+         ========================*/
 
 		$this->start_controls_tab(
 			'about_btn_normal_tab',
@@ -267,7 +268,7 @@ class About_widget extends \Elementor\Widget_Base{
 				'label' => esc_html__( 'Normal','picchi-extension' ),
 			]
 		);
-        // Text Color
+        // About Button Text Color
         $this->add_control(
 			'about_btn_text_color',
 			[
@@ -283,7 +284,7 @@ class About_widget extends \Elementor\Widget_Base{
 				],
 			]
 		);
-        // Background Color
+        // About Button Background Color
         $this->add_control(
 			'about_btn_bg_color',
 			[
@@ -306,7 +307,7 @@ class About_widget extends \Elementor\Widget_Base{
 				'selector' => '{{WRAPPER}} .about-text a.box-btn',
 			]
 		);
-        // Button one Margin
+        // About Button  Margin
         $this->add_control(
 			'about_btn_margin',
 			[
@@ -318,7 +319,7 @@ class About_widget extends \Elementor\Widget_Base{
 				],
 			]
 		);
-        // Button one Padding
+        // About Button  Padding
         $this->add_control(
 			'about_btn_padding',
 			[
@@ -330,7 +331,7 @@ class About_widget extends \Elementor\Widget_Base{
 				],
 			]
 		);
-         // Button one border Radious
+         // About Button  border Radious
          $this->add_control(
 			'about_btn_BorderRadius',
 			[
