@@ -144,146 +144,275 @@ class Feature_widget extends \Elementor\Widget_Base{
             Style Tab
         ===================== */
         $this->start_controls_section(
-            'style_section',
+            'feature_area_style_section',
             [
                 'label'=>esc_html__( 'Style','picchi-extension' ),
                 'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
 
             ]
         );
-        // Section Sub Title
-        $this->add_control(
-			'heading_sub_title',
+		/*===============================
+		 Feature Area Background Option
+		 ===============================*/
+		// Feature Area Background Title
+		$this->add_control(
+			'feature_area_background_title',
 			[
-				'label' => esc_html__( 'Sub Title', 'picchi-extension' ),
+				'label' => esc_html__( 'Feature Background Option', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		// Feature Area Background Color
+		$this->add_control(
+			'feature_area_background_color',
+			[
+				'label' => esc_html__( 'Background Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#f8f9fa',
+				'selectors' => [
+					'{{WRAPPER}} .features' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+        // Feature Section Sub Title
+        $this->add_control(
+			'feature_Section_sub_title',
+			[
+				'label' => esc_html__( 'Feature Sub Title Option ', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
         
-        // Sub Heading Color
+        // Feature section Sub Title Color
         $this->add_control(
-			'heading_sub_title_color',
+			'feature_Section_sub_title_color',
 			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#fff',
-				'selectors' => [
-					'{{WRAPPER}} .section-title h4' => 'color: {{VALUE}}',
-				],
-			]
-		);
-        // Sub Heading typography
-        $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'heading_sub_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h4',
-			]
-		);
-        // Section Heading Title
-        $this->add_control(
-			'heading_title',
-			[
-				'label' => esc_html__( 'Heading', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-        
-        // Heading Color
-        $this->add_control(
-			'heading_title_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#fff',
-				'selectors' => [
-					'{{WRAPPER}} .section-title h2' => 'color: {{VALUE}}',
-				],
-			]
-		);
-        //  Heading Typography
-        $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'heading_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h2',
-			]
-		);
-        // Border 
-        $this->add_control(
-			'heading_border_style',
-			[
-				'label' => esc_html__( 'Border', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-        // border One Background Color
-        $this->add_control(
-			'heading_border1_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'label' => esc_html__( 'Feature Sub Title Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
                 'default'=>'#777',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h2::before' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .single-feature h6' => 'color: {{VALUE}}',
 				],
 			]
 		);
-        // border Two Background Color
-        $this->add_control(
-			'heading_border2_color',
+        // Feature section Sub Title Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'name' => 'feature_Section_sub_title_typography',
+				'selector' => '{{WRAPPER}} .single-feature h6',
+			]
+		);
+        // Feature section Title 
+        $this->add_control(
+			'feature_Section_heading_title',
+			[
+				'label' => esc_html__( 'Feature  Title Option', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+        
+        // Feature section Title Color
+        $this->add_control(
+			'feature_Section_title_color',
+			[
+				'label' => esc_html__( 'Feature Title Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#e16038',
+                'default'=>'#000',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h2::after' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .single-feature h4' => 'color: {{VALUE}}',
 				],
 			]
 		);
-
-
-        // Description
-        $this->add_control(
-			'heading_des_style',
+        //  Feature section Title Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'label' => esc_html__( 'Description', 'picchi-extension' ),
+				'name' => 'feature_Section__title_typography',
+				'selector' => '{{WRAPPER}} .single-feature h4',
+			]
+		);
+		// Feature section Seperator
+		// Feature section Seperator Title
+		$this->add_control(
+			'feature_Section_seperator_title',
+			[
+				'label' => esc_html__( 'Feature Seperator Option', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
 
-
-        // Description Color
-        $this->add_control(
-			'section_des_color',
+		// Feature section Seperator Color
+		$this->add_control(
+			'feature_Section_seperator_color',
 			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'label' => esc_html__( 'Feature Seperator Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#FFF',
+                'default'=>'tomato',
 				'selectors' => [
-					'{{WRAPPER}} .section-title p' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-feature h4:before' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
-    
-        // Description Typography
-        
+		// Feature section Icon Title
+		$this->add_control(
+			'feature_Section_icon_title',
+			[
+				'label' => esc_html__( 'Feature Icon Option', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		// Feature section Icon Color
+		$this->add_control(
+			'feature_Section_icon_color',
+			[
+				'label' => esc_html__( 'Feature Icon Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'tomato',
+				'selectors' => [
+					'{{WRAPPER}} .feature-box i' => 'color: {{VALUE}}',
+				],
+			]
+		);
+		// Feature section Icon Size
+		$this->add_control(
+			'feature_Section_icon_size',
+			[
+				'label' => esc_html__( 'Feature Icon Size', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 20,
+						'max' => 80,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .feature-box i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		// Feature Card  Title
+		$this->add_control(
+			'feature_card_title',
+			[
+				'label' => esc_html__( 'Feature Card Title Option', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		// Feature Card Title Color
+        $this->add_control(
+			'feature_card_title_color',
+			[
+				'label' => esc_html__( 'Feature Card Title Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#000',
+				'selectors' => [
+					'{{WRAPPER}} .feature-box h5' => 'color: {{VALUE}}',
+				],
+			]
+		);
+        //  Feature Card Title Typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'section-title_dsc_typography',
-				'selector' => '{{WRAPPER}} .section-title p',
+				'name' => 'feature_card__title_typography',
+				'selector' => '{{WRAPPER}} .feature-box h5',
 			]
 		);
-        
-
-
-        
-        
+		// Feature Card  Description Title
+		$this->add_control(
+			'feature_card_description',
+			[
+				'label' => esc_html__( 'Feature Card Description Option', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		// Feature Card Description Color
+        $this->add_control(
+			'feature_card_description_color',
+			[
+				'label' => esc_html__( 'Feature Card Description Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#777',
+				'selectors' => [
+					'{{WRAPPER}} .feature-box p' => 'color: {{VALUE}}',
+				],
+			]
+		);
+        //  Feature Card Description Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'feature_card__description_typography',
+				'selector' => '{{WRAPPER}} .feature-box p',
+			]
+		);
+		// Feature Image Style Option
+		// Feature Image Title
+		$this->add_control(
+			'feature_image_style_options',
+			[
+				'label' => esc_html__( 'Feature Image Style Options', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		// Feature Image Background Color
+		$this->add_control(
+			'feature_image_background_color',
+			[
+				'label' => esc_html__( 'Feature Image Background Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#333',
+				'selectors' => [
+					'{{WRAPPER}} .features-1::after,.features-2::after' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
+		// Feature Image Opacity
+		$this->add_control(
+			'feature_image_opacity',
+			[
+				'label' => esc_html__( 'Image Opacity', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 0.00,
+						'max' => 1,
+						'step' => 0.01,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 0.8,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .features-1::after,.features-2::after' => 'opacity: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 
         $this->end_controls_section();
