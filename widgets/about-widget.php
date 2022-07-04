@@ -710,8 +710,7 @@ class About_widget extends \Elementor\Widget_Base{
         $about_btn_text = $settings['about_btn_text'];
         $about_btn_link = $settings['about_btn_link']['url'];
         $about_image = $settings['about_image']['url'];
-        // $btn_two_text = $settings['btn_two_text'];
-        // $btn_two_link = $settings['btn_two_link']['url'];
+        
 
         ?>
             <div class="row">

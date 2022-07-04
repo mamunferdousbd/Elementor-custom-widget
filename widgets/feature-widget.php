@@ -35,71 +35,106 @@ class Feature_widget extends \Elementor\Widget_Base{
 
             ]
         );
-
-        // Sub Heading
-        $this->add_control(
-            'section_title_sub_heading',
-            [
-                'label'=>esc_html__( 'Sub Heading','picchi-extension' ),
-                'type'=>  \Elementor\Controls_Manager::TEXT,
-                'placeholder'=>esc_html__('Write Your Sub Heading Here.','picchi-extension'),
-                'seperator'=>'after',
-                'label_block'=>true,
-            ]
-        );
-        // Heading
-        $this->add_control(
-            'section_title_heading',
-            [
-                'label'=>esc_html__( 'Heading','picchi-extension' ),
-                'type'=>  \Elementor\Controls_Manager::TEXT,
-                'placeholder'=>esc_html__('Write Your Heading Here.','picchi-extension'),
-                'seperator'=>'after',
-                'label_block'=>true,
-            ]
-        );
-        // Description
-        $this->add_control(
-            'section_title_description',
-            [
-                'label'=>esc_html__( 'Description','picchi-extension' ),
-                'type'=>  \Elementor\Controls_Manager::TEXTAREA,
-                'dynamic' => [
-					'active' => true,
-				],
-                'rows'=>10,
-                'placeholder'=>esc_html__('Write Your Description Here.','picchi-extension'),
-                'seperator'=>'after',
-                'label_block'=>true,
-            ]
-        );
-        $this->add_control(
-			'section_title_align',
+		// Features Style
+		$this->add_control(
+			'features_style',
 			[
-				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'label' => esc_html__( 'Alignment', 'picchi-extension' ),
+				'label' => esc_html__( 'Features Style', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'solid',
 				'options' => [
-					'left' => [
-						'title' => esc_html__( 'Left', 'picchi-extension' ),
-						'icon' => 'eicon-text-align-left',
+					'feature1'  => esc_html__( 'Feature 1', 'picchi-extension' ),
+					'feature2' => esc_html__( 'Feature 2', 'picchi-extension' ),
+				],
+			]
+		);
+
+        // Features Sub Heading
+        $this->add_control(
+            'features_sub_heading',
+            [
+                'label'=>esc_html__( 'Features Sub Heading','picchi-extension' ),
+                'type'=>  \Elementor\Controls_Manager::TEXT,
+                'placeholder'=>esc_html__('Write Your Features Sub Heading Here.','picchi-extension'),
+                'seperator'=>'after',
+                'label_block'=>true,
+            ]
+        );
+        // Features Heading
+        $this->add_control(
+            'features_heading',
+            [
+                'label'=>esc_html__( 'Features Heading','picchi-extension' ),
+                'type'=>  \Elementor\Controls_Manager::TEXT,
+                'placeholder'=>esc_html__('Write Your Features Heading Here.','picchi-extension'),
+                'seperator'=>'after',
+                'label_block'=>true,
+            ]
+        );
+        
+		$repeater = new \Elementor\Repeater();
+		// Feature Icon
+		$repeater->add_control(
+			'feature_icon',
+			[
+				'label' => esc_html__( 'Feature Icon', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-circle',
+					'library' => 'fa-solid',
+				],
+				'recommended' => [
+					'fa-solid' => [
+						'circle',
+						'dot-circle',
+						'square-full',
 					],
-					'center' => [
-						'title' => esc_html__( 'Center', 'picchi-extension' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__( 'Right', 'picchi-extension' ),
-						'icon' => 'eicon-text-align-right',
-					],
-                    'justify' => [
-						'title' => esc_html__( 'Justified', 'elementor' ),
-						'icon' => 'eicon-text-align-justify',
+					'fa-regular' => [
+						'circle',
+						'dot-circle',
+						'square-full',
 					],
 				],
-				'default' => 'center',
-				'selectors' => [
-					'{{WRAPPER}} .section-title' => 'text-align: {{VALUE}};',
-				],
+			]
+		);
+		//  Feature Title
+        $repeater->add_control(
+			'feature_title', [
+				'label' => esc_html__( 'Feature Title', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Add Feature Title' , 'picchi-extension' ),
+				'label_block' => true,
+			]
+		);
+		//Feature Description
+        $repeater->add_control(
+			'feature_desc', [
+				'label' => esc_html__( 'Feature Description', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'default' => esc_html__( 'Add Feature Description' , 'picchi-extension' ),
+				'label_block' => true,
+			]
+		);
+		$this->add_control(
+			'features_list',
+			[
+				'label' => esc_html__( 'Repeater List', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::REPEATER,
+				'fields' => $repeater->get_controls(),
+				'title_field' => '{{{ feature_title }}}',
+			]
+		);
+		
+		// Feature Image
+        $this->add_control(
+			'feature_image',
+			[
+				'label' => esc_html__( 'Choose Feature Image', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+                'label_block'=>true,
+                'seperator'=>'before',
+                'placeholder'=>esc_html__( 'Choose Feature Image', 'picchi-extension' ),
+				
 			]
 		);
         
@@ -261,52 +296,59 @@ class Feature_widget extends \Elementor\Widget_Base{
 
     protected function render(){
         $settings = $this->get_settings_for_display();
-        $section_title_sub_heading = $settings['section_title_sub_heading'];
-        $section_title_heading = $settings['section_title_heading'];
-        $section_title_description = $settings['section_title_description'];
-        
+        $features_style = $settings['features_style'];
+        $features_sub_heading = $settings['features_sub_heading'];
+        $features_heading = $settings['features_heading'];
+        $feature_image = $settings['feature_image']['url'];
+
+		if($features_style=='feature1'){
+			$feature_class= 'features-1';
+			$margin_left ='';
+
+		}else{
+			$feature_class='features-2';
+			$margin_left ='ml-auto';
+		}
+
 
         ?>
 		<style>
 			.features-1::before, .features-2::before{
-				background-image:url('http://localhost/pichhi/wp-content/uploads/2022/07/priscilla.jpg')
+				background-image:url('<?php echo $feature_image;?>');
 			}
 		</style>
-    	<div class="features features-1">
+    	<div class="features <?php echo $feature_class;?>">
 			
-		<div class="col-xl-6">
+		<div class="col-xl-6 <?php echo $margin_left;?>">
 			<div class="single-feature text-center">
-				<h6>Highly Creative Solutions</h6>
-				<h4>we are digital</h4>
+				<h6><?php echo $features_sub_heading;?></h6>
+				<h4><?php echo $features_heading;?></h4>
+
 				<div class="row">
+
+				<?php
+                if ( $settings['features_list'] ) {
+                    foreach (  $settings['features_list'] as $item ) {
+                ?>
+
 					<div class="col-xl-6">
 						<div class="feature-box">
-							<i class="far fa-newspaper"></i>
-							<h5>modern design</h5>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latinin contaversy. </p>
+							<i class="<?php echo $item['feature_icon']['value'];?>"></i>
+							<h5><?php echo $item['feature_title'];?></h5>
+							<p><?php echo $item['feature_desc'];?></p>
 						</div>
 					</div>
-					<div class="col-xl-6">
-						<div class="feature-box">
-							<i class="far fa-newspaper"></i>
-							<h5>mobile firendly</h5>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latinin contaversy. </p>
-						</div>
-					</div>
-					<div class="col-xl-6">
-						<div class="feature-box">
-							<i class="far fa-newspaper"></i>
-							<h5>error free</h5>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latinin contaversy. </p>
-						</div>
-					</div>
-					<div class="col-xl-6">
-						<div class="feature-box">
-							<i class="far fa-newspaper"></i>
-							<h5>24/7 support</h5>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latinin contaversy. </p>
-						</div>
-					</div>
+
+				<?php
+					}
+				}
+				?>	
+					
+
+					
+
+					
+
 				</div>
 			</div>
 		</div>

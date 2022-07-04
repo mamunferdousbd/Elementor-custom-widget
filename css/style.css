@@ -239,7 +239,6 @@ body {
 	content: "";
 	width: 50%;
 	height: 100%;
-	background-image: url("../img/feature-1.jpg");
 	right: 0;
 	top: 0;
 	background-size: cover;
@@ -250,7 +249,6 @@ body {
 	content: "";
 	width: 50%;
 	height: 100%;
-	background-image: url("../img/feature-2.jpg");
 	left: 0;
 	top: 0;
 	background-size: cover;
@@ -326,4 +324,7 @@ body {
 }
 .single-feature a.box-btn {
 	margin-top: 30px;
+}
+.ml-auto{
+  margin-left: auto;
 }
