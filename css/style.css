@@ -1,221 +1,386 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 
 /* ==================
-    Banner CSS
+  Banner CSS
 =================== */
 
 .banner {
-    text-align: center;
-    color: #fff;
+  text-align: center;
+  color: #fff;
 }
 
 .banner h4 {
-    font-weight: 400;
-    margin-bottom: 0;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 .banner h1 {
-    font-size: 50px;
-    text-transform: capitalize;
-    margin: 20px;
-    font-weight: 600;
+  font-size: 50px;
+  text-transform: capitalize;
+  margin: 20px;
+  font-weight: 600;
 }
 
 .banner p {
-    color: #bbb;
-    font-size: 18px;
+  color: #bbb;
+  font-size: 18px;
 }
 
 .banner a {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 .box_btn {
-    display: inline-block;
-    background-color: tomato;
-    color: #fff;
-    padding: 10px 30px;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 7px;
+  display: inline-block;
+  background-color: tomato;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 7px;
 }
 
 .border_btn {
-    display: inline-block;
-    color: #fff;
-    border: 1px solid tomato;
-    border-radius: 7px;
-    padding: 9px 30px;
-    font-size: 18px;
-    font-weight: 500;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid tomato;
+  border-radius: 7px;
+  padding: 9px 30px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 
 /* =====================
-    Section Heading CSS
+  Section Heading CSS
 ======================= =*/
 
 .section-title h4 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #777;
-    margin-bottom: -10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #777;
+  margin-bottom: -10px;
 }
 
 .section-title h2 {
-    font-size: 32px;
-    text-transform: capitalize;
-    margin: 15px 0;
-    display: inline-block;
-    position: relative;
-    font-weight: 700;
-    padding-bottom: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  font-size: 32px;
+  text-transform: capitalize;
+  margin: 15px 0;
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .section-title p {
-    font-weight: 300;
-    font-size: 14px;
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .black-bg .section-title h2,
 .black-bg .section-title h4,
 .black-bg .section-title p {
-    color: #fff
+  color: #fff
 }
 
 .section-title h2:before {
-    position: absolute;
-    content: " ";
-    width: 150px;
-    height: 1px;
-    background-color: #777;
-    bottom: 0;
-    left: 50%;
-    margin-left: -75px;
+  position: absolute;
+  content: " ";
+  width: 150px;
+  height: 1px;
+  background-color: #777;
+  bottom: 0;
+  left: 50%;
+  margin-left: -75px;
 }
 
 .section-title h2:after {
-    position: absolute;
-    content: " ";
-    width: 80px;
-    height: 3px;
-    background-color: #e16038;
-    border: darkblue;
-    bottom: -1px;
-    left: 50%;
-    margin-left: -40px;
+  position: absolute;
+  content: " ";
+  width: 80px;
+  height: 3px;
+  background-color: #e16038;
+  border: darkblue;
+  bottom: -1px;
+  left: 50%;
+  margin-left: -40px;
 }
 
 .section-title {
-    margin-bottom: 70px;
-    text-align: center;
+  margin-bottom: 70px;
+  text-align: center;
 }
 
 
 /* =====================
-    About Widget CSS
+  About Widget CSS
 ======================= =*/
 
 .single-about i {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .single-about h4 {
-    margin: 20px 0;
-    font-weight: 500;
-    text-transform: capitalize;
-    font-size: 22px;
+  margin: 20px 0;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 22px;
 }
 
 .single-about a {
-    text-transform: capitalize;
-    margin-top: 10px;
-    display: block;
-    color: tomato;
+  text-transform: capitalize;
+  margin-top: 10px;
+  display: inline-block;
+  color: tomato;
 }
 
 .single-about i {
-    font-size: 36px;
+  font-size: 36px;
 }
-
-.about-text {
-    padding-bottom: 50px;
+.pt-100{
+  padding-top: 100px;
 }
 
 .about-text h4 {
-    text-transform: capitalize;
-    font-size: 28px;
-    margin-bottom: 10px;
-    font-weight: 700;
+  text-transform: capitalize;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .about-text p {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .about-text ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    float: left;
-    width: 50%;
-    margin: 15px 0;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  float: left;
+  width: 50%;
+  margin: 15px 0;
 }
 
 .about-text ul li {
-    margin-bottom: 10px;
-    color: #646f79;
-    font-size: 14px;
+  margin-bottom: 10px;
+  color: #646f79;
+  font-size: 14px;
 }
 
 .about-text ul li,
 .single-feature ul li {
-    margin-bottom: 10px;
-    color: #646f79;
-    font-size: 14px;
+  margin-bottom: 10px;
+  color: #646f79;
+  font-size: 14px;
 }
 
 .about-text ul li i,
 .single-feature ul li i {
-    padding-right: 5px;
-    color: #646f79
+  padding-right: 5px;
+  color: #646f79
 }
 
 .about-text a {
-    margin-top: 20px;
-    color: #FFF;
-    background-color: #e16038;
-    padding: 10px 30px;
-    border-radius: 7px;
+  margin-top: 20px;
+  color: #FFF;
+  background-color: #e16038;
+  padding: 10px 30px;
+  border-radius: 7px;
 }
 
 .about-img img {
-    width: 100%;
+  width: 100%;
 }
 
 .about-img {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .about-img:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: tomato;
-    z-index: -1;
-    right: -10px;
-    bottom: -10px;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+  z-index: -1;
+  right: -10px;
+  bottom: -10px;
 }
+/*==========================
+ Features Area CSS 
+ ==========================*/
+
+.single-feature ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  float: left;
+  width: 50%;
+  margin: 15px 0;
+}
+.features {
+  position: relative;
+  background-color: #f8f9fa;
+}
+.features-1::before {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	background-size: cover;
+	background-position: center;
+}
+.features-2::before {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-size: cover;
+	background-position: center;
+}
+.features-1 {
+  position: relative;
+}
+.single-feature {
+	padding: 100px;
+	overflow: hidden;
+}
+.single-feature h4 {
+	text-transform: uppercase;
+	font-size: 34px;
+	position: relative;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	font-weight: 700;
+}
+.single-feature h4:before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-color: tomato;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20px;
+}
+.single-feature p {
+  margin-bottom: 20px;
+}
+.features-1::after {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	background-color: #333;
+	opacity: .8;
+}
+.features-2::after {
+	position: absolute;
+	content: "";
+	width: 50%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #333;
+	opacity: .8;
+}
+.single-feature h6 {
+	color: #777;
+	text-transform: lowercase;
+	font-size: 16px;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+.feature-box h5 {
+	font-size: 22px;
+	text-transform: capitalize;
+	font-weight: 600;
+	margin: 15px 0;
+}
+.feature-box {
+  text-align: left;
+  margin: 25px 0;
+}
+.feature-box i {
+  font-size: 25px;
+}
+.single-feature a.box-btn {
+	margin-top: 30px;
+}
+.ml-auto{
+  margin-left: auto;
+}
+/*==========================
+ Services Area CSS 
+ ==========================*/
+ .single-service i {
+  font-size: 35px;
+}
+.single-service h4 {
+	margin: 30px 0;
+	font-size: 20px;
+	font-weight: 700;
+	position: relative;
+}
+.single-service {
+	margin-bottom: 10px;
+	text-align: left;
+	box-shadow: 0 15px 40px #ededed;
+	padding: 40px;
+}
+.single-service p {
+	color: #646f79;
+	line-height: 26px;
+	font-size: 14px;
+	font-weight:400
+}
+/*==========================
+ Process Area CSS 
+ ==========================*/
+ .single-process h6 {
+  background-color: #e67e22;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  font-size: 20px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.single-process h6 span {
+  background-color: #d35400;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  line-height: 45px;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+
+

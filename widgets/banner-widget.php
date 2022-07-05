@@ -11,7 +11,7 @@ class Banner_widget extends \Elementor\Widget_Base{
     }
     // Widget Icon
 	public function get_icon() {
-        return ' eicon-circle';
+        return 'eicon-banner';
     }
     // Help for Widget
 	public function get_custom_help_url() {

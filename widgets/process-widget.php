@@ -1,13 +1,13 @@
 <?php
-class Heading_widget extends \Elementor\Widget_Base{
+class Process_widget extends \Elementor\Widget_Base{
 
     // Widget Name
     public function get_name() {
-        return 'Heading Widget';
+        return 'Process Widget';
     }
     // Widget Title
 	public function get_title() {
-        return esc_html( 'Heading Widget','picchi-extension' );
+        return esc_html( 'Process Widget','picchi-extension' );
     }
     // Widget Icon
 	public function get_icon() {
@@ -23,7 +23,7 @@ class Heading_widget extends \Elementor\Widget_Base{
     }
     // For Searching Widget 
 	public function get_keywords() {
-        return ['pageheading','heading','widget','Sectionheading'];
+        return ['pageProcess','Process','widget','SectionProcess'];
     }
     
     protected function register_controls(){
@@ -36,45 +36,46 @@ class Heading_widget extends \Elementor\Widget_Base{
             ]
         );
 
-        // Sub Heading
+        // Process Heading
         $this->add_control(
-            'section_title_sub_heading',
+            'process_heading',
             [
-                'label'=>esc_html__( 'Sub Heading','picchi-extension' ),
+                'label'=>esc_html__( 'Process Heading','picchi-extension' ),
                 'type'=>  \Elementor\Controls_Manager::TEXT,
-                'placeholder'=>esc_html__('Write Your Sub Heading Here.','picchi-extension'),
+                'placeholder'=>esc_html__('Write Your Process Heading Here.','picchi-extension'),
                 'seperator'=>'after',
                 'label_block'=>true,
             ]
         );
-        // Heading
+        // Process Number
         $this->add_control(
-            'section_title_heading',
+            'process_number',
             [
-                'label'=>esc_html__( 'Heading','picchi-extension' ),
-                'type'=>  \Elementor\Controls_Manager::TEXT,
-                'placeholder'=>esc_html__('Write Your Heading Here.','picchi-extension'),
+                'label'=>esc_html__( 'Process Number','picchi-extension' ),
+                'type'=>  \Elementor\Controls_Manager::NUMBER,
+                'placeholder'=>esc_html__('Write Your Process Number Here.','picchi-extension'),
                 'seperator'=>'after',
                 'label_block'=>true,
             ]
         );
-        // Description
+        // Process Description
         $this->add_control(
-            'section_title_description',
+            'process_description',
             [
-                'label'=>esc_html__( 'Description','picchi-extension' ),
+                'label'=>esc_html__( 'Process Description','picchi-extension' ),
                 'type'=>  \Elementor\Controls_Manager::TEXTAREA,
                 'dynamic' => [
 					'active' => true,
 				],
                 'rows'=>10,
-                'placeholder'=>esc_html__('Write Your Description Here.','picchi-extension'),
+                'placeholder'=>esc_html__('Write Your Process Description Here.','picchi-extension'),
                 'seperator'=>'after',
                 'label_block'=>true,
             ]
         );
+		// Process Heading text Align
         $this->add_control(
-			'section_title_align',
+			'process_heading_txt_align',
 			[
 				'type' => \Elementor\Controls_Manager::CHOOSE,
 				'label' => esc_html__( 'Alignment', 'picchi-extension' ),
@@ -98,7 +99,7 @@ class Heading_widget extends \Elementor\Widget_Base{
 				],
 				'default' => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .section-title' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .single-process' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -116,132 +117,94 @@ class Heading_widget extends \Elementor\Widget_Base{
 
             ]
         );
-        // Section Sub Title
+        // Heading Process Style  Title
         $this->add_control(
-			'heading_sub_title',
+			'heading_process_style',
 			[
-				'label' => esc_html__( 'Sub Title', 'picchi-extension' ),
+				'label' => esc_html__( 'Heading Style', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
         
-        // Sub Heading Color
+        // Process Heading Color
         $this->add_control(
-			'heading_sub_title_color',
+			'process_heading_color',
 			[
 				'label' => esc_html__( 'Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
                 'default'=>'#777',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h4' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-process h6' => 'color: {{VALUE}}',
 				],
 			]
 		);
-        // Sub Heading typography
+        // Process Heading typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'heading_sub_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h4',
+				'name' => 'process_heading_typography',
+				'selector' => '{{WRAPPER}} .single-process h6',
 			]
 		);
-        // Section Heading Title
+		// Process Number  Title
         $this->add_control(
-			'heading_title',
+			'process_number_style_title',
 			[
-				'label' => esc_html__( 'Heading', 'picchi-extension' ),
+				'label' => esc_html__( 'Number Style', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
         
-        // Heading Color
+        // Process Number Color
         $this->add_control(
-			'heading_title_color',
+			'process_number_color',
 			[
 				'label' => esc_html__( 'Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
                 'default'=>'#000',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h2' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-process h6 span' => 'color: {{VALUE}}',
 				],
 			]
 		);
-        //  Heading Typography
+        //  Process Number Typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'heading_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h2',
+				'name' => 'process_number_typography',
+				'selector' => '{{WRAPPER}} .single-process h6 span',
 			]
 		);
-        // Border 
+        // Process Description  Title
         $this->add_control(
-			'heading_border_style',
+			'process_description_style_title',
 			[
-				'label' => esc_html__( 'Border', 'picchi-extension' ),
+				'label' => esc_html__( 'Description Style', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
-        // border One Background Color
-        $this->add_control(
-			'heading_border1_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#777',
-				'selectors' => [
-					'{{WRAPPER}} .section-title h2::before' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-        // border Two Background Color
-        $this->add_control(
-			'heading_border2_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#e16038',
-				'selectors' => [
-					'{{WRAPPER}} .section-title h2::after' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-
-
-        // Description
-        $this->add_control(
-			'heading_des_style',
-			[
-				'label' => esc_html__( 'Description', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-
-        // Description Color
-        $this->add_control(
-			'section_des_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#333',
-				'selectors' => [
-					'{{WRAPPER}} .section-title p' => 'color: {{VALUE}}',
-				],
-			]
-		);
-    
-        // Description Typography
         
+        // Process Description Color
+        $this->add_control(
+			'process_description_color',
+			[
+				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#000',
+				'selectors' => [
+					'{{WRAPPER}} .single-process p' => 'color: {{VALUE}}',
+				],
+			]
+		);
+        //  Process Description Typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'section-title_dsc_typography',
-				'selector' => '{{WRAPPER}} .section-title p',
+				'name' => 'process_description_typography',
+				'selector' => '{{WRAPPER}} .single-process p',
 			]
 		);
         
@@ -261,19 +224,16 @@ class Heading_widget extends \Elementor\Widget_Base{
 
     protected function render(){
         $settings = $this->get_settings_for_display();
-        $section_title_sub_heading = $settings['section_title_sub_heading'];
-        $section_title_heading = $settings['section_title_heading'];
-        $section_title_description = $settings['section_title_description'];
+        $process_heading = $settings['process_heading'];
+        $process_number = $settings['process_number'];
+        $process_description = $settings['process_description'];
         
 
         ?>
-            <div class="section-title">
-                <h4><?php echo $section_title_sub_heading;?></h4>
-                <h2><?php echo $section_title_heading;?></h2>
-                <p><?php echo $section_title_description;?></p>
-                
-            </div>
-
+            <div class="single-process">
+				<h6><?php echo $process_heading;?> <span><?php echo $process_number;?></span></h6>
+				<p><?php echo $process_description;?></p>
+			</div>
 
         <?php
 
