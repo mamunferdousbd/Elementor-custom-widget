@@ -250,6 +250,7 @@ final class Elementor_Picchi_Extension {
 		require_once( __DIR__ . '/widgets/heading-widget.php' );
 		require_once( __DIR__ . '/widgets/about-widget.php' );
 		require_once( __DIR__ . '/widgets/feature-widget.php' );
+		require_once( __DIR__ . '/widgets/services-widget.php' );
 
 		// added by EWA - EWA own Register widgets, loading all widget names
 
@@ -258,6 +259,7 @@ final class Elementor_Picchi_Extension {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Heading_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \About_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Feature_widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Services_widget() );
 
 	}
 
