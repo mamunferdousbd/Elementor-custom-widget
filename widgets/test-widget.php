@@ -1,17 +1,17 @@
 <?php
-class Mamun_Test_widget extends \Elementor\Widget_Base{
+class Test_widget extends \Elementor\Widget_Base{
 
     // Widget Name
     public function get_name() {
-        return 'Mamun Widget';
+        return 'Test Widget';
     }
     // Widget Title
 	public function get_title() {
-        return esc_html( 'Mamun Widget','picchi-extension' );
+        return esc_html( 'Picchi Test','picchi-extension' );
     }
     // Widget Icon
 	public function get_icon() {
-        return ' eicon-circle';
+        return 'eicon-t-letter-bold';
     }
     // Help for Widget
 	public function get_custom_help_url() {
@@ -19,7 +19,7 @@ class Mamun_Test_widget extends \Elementor\Widget_Base{
     }
     // Widget Categories Basic,General,Pro Etc.
 	public function get_categories() {
-        return ['general'];
+        return ['picchi-category'];
     }
     // For Searching Widget 
 	public function get_keywords() {

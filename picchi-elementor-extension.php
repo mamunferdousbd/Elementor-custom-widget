@@ -252,16 +252,18 @@ final class Elementor_Picchi_Extension {
 		require_once( __DIR__ . '/widgets/feature-widget.php' );
 		require_once( __DIR__ . '/widgets/services-widget.php' );
 		require_once( __DIR__ . '/widgets/process-widget.php' );
+		require_once( __DIR__ . '/widgets/projects-widget.php' );
 
 		// added by EWA - EWA own Register widgets, loading all widget names
 
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Mamun_Test_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Test_Widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Banner_Widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Heading_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \About_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Feature_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Services_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Process_widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Projects_widget() );
 
 	}
 
@@ -309,9 +311,9 @@ final class Elementor_Picchi_Extension {
     public function elementor_common_category () {
 
 	   \Elementor\Plugin::$instance->elements_manager->add_category( 
-	   	'picchi-extension',
+	   	'picchi-category',
 	   	[
-	   		'title' => __( 'Elementor Common Category', 'picchi-extension' ),
+	   		'title' => __( 'Picchi', 'picchi-extension' ),
 	   		'icon' => 'fa fa-plug', //default icon
 	   	],
 	   	2 // position

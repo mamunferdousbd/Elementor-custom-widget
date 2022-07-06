@@ -7,11 +7,11 @@ class Process_widget extends \Elementor\Widget_Base{
     }
     // Widget Title
 	public function get_title() {
-        return esc_html( 'Process Widget','picchi-extension' );
+        return esc_html( 'Picchi Process','picchi-extension' );
     }
     // Widget Icon
 	public function get_icon() {
-        return 'eicon-plus';
+        return 'eicon-scroll';
     }
     // Help for Widget
 	public function get_custom_help_url() {
@@ -19,7 +19,7 @@ class Process_widget extends \Elementor\Widget_Base{
     }
     // Widget Categories Basic,General,Pro Etc.
 	public function get_categories() {
-        return ['general'];
+        return ['picchi-category'];
     }
     // For Searching Widget 
 	public function get_keywords() {
@@ -110,22 +110,13 @@ class Process_widget extends \Elementor\Widget_Base{
             Style Tab
         ===================== */
         $this->start_controls_section(
-            'style_section',
+            'heading_style_section',
             [
-                'label'=>esc_html__( 'Style','picchi-extension' ),
+                'label'=>esc_html__( 'Heading Style','picchi-extension' ),
                 'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
 
             ]
         );
-        // Heading Process Style  Title
-        $this->add_control(
-			'heading_process_style',
-			[
-				'label' => esc_html__( 'Heading Style', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
         
         // Process Heading Color
         $this->add_control(
@@ -139,6 +130,18 @@ class Process_widget extends \Elementor\Widget_Base{
 				],
 			]
 		);
+        // Process Heading Background Color
+        $this->add_control(
+			'process_heading_bg_color',
+			[
+				'label' => esc_html__( 'Background Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#E67E22',
+				'selectors' => [
+					'{{WRAPPER}} .single-process h6' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
         // Process Heading typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
@@ -147,16 +150,19 @@ class Process_widget extends \Elementor\Widget_Base{
 				'selector' => '{{WRAPPER}} .single-process h6',
 			]
 		);
-		// Process Number  Title
-        $this->add_control(
-			'process_number_style_title',
-			[
-				'label' => esc_html__( 'Number Style', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-        
+        $this->end_controls_section();
+        /*============================
+        Number
+        ============================== */
+
+        $this->start_controls_section(
+            'number_style_section',
+            [
+                'label'=>esc_html__( 'Number Style','picchi-extension' ),
+                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+
+            ]
+        );
         // Process Number Color
         $this->add_control(
 			'process_number_color',
@@ -169,6 +175,18 @@ class Process_widget extends \Elementor\Widget_Base{
 				],
 			]
 		);
+        // Process Number Background Color
+        $this->add_control(
+			'process_number_bg_color',
+			[
+				'label' => esc_html__( 'Background Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#D35400',
+				'selectors' => [
+					'{{WRAPPER}} .single-process h6 span' => 'background-color: {{VALUE}}',
+				],
+			]
+		);
         //  Process Number Typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
@@ -177,16 +195,21 @@ class Process_widget extends \Elementor\Widget_Base{
 				'selector' => '{{WRAPPER}} .single-process h6 span',
 			]
 		);
-        // Process Description  Title
-        $this->add_control(
-			'process_description_style_title',
-			[
-				'label' => esc_html__( 'Description Style', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-        
+        $this->end_controls_section();
+        /*=============================
+        Description
+         =============================*/
+
+    
+        $this->start_controls_section(
+                'description_style_section',
+                [
+                    'label'=>esc_html__( 'Description Style','picchi-extension' ),
+                    'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+    
+                ]
+            );
+
         // Process Description Color
         $this->add_control(
 			'process_description_color',
@@ -207,13 +230,7 @@ class Process_widget extends \Elementor\Widget_Base{
 				'selector' => '{{WRAPPER}} .single-process p',
 			]
 		);
-        
-
-
-        
-        
-
-
+    
         $this->end_controls_section();
         
 
