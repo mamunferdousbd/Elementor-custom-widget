@@ -7,7 +7,7 @@ class Banner_widget extends \Elementor\Widget_Base{
     }
     // Widget Title
 	public function get_title() {
-        return esc_html( 'Banner Widget','picchi-extension' );
+        return esc_html( 'Picchi Banner','picchi-extension' );
     }
     // Widget Icon
 	public function get_icon() {
@@ -19,7 +19,7 @@ class Banner_widget extends \Elementor\Widget_Base{
     }
     // Widget Categories Basic,General,Pro Etc.
 	public function get_categories() {
-        return ['general'];
+        return ['picchi-category'];
     }
     // For Searching Widget 
 	public function get_keywords() {

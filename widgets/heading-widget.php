@@ -7,11 +7,11 @@ class Heading_widget extends \Elementor\Widget_Base{
     }
     // Widget Title
 	public function get_title() {
-        return esc_html( 'Heading Widget','picchi-extension' );
+        return esc_html( 'Picchi Heading','picchi-extension' );
     }
     // Widget Icon
 	public function get_icon() {
-        return 'eicon-plus';
+        return ' eicon-heading';
     }
     // Help for Widget
 	public function get_custom_help_url() {
@@ -19,7 +19,7 @@ class Heading_widget extends \Elementor\Widget_Base{
     }
     // Widget Categories Basic,General,Pro Etc.
 	public function get_categories() {
-        return ['general'];
+        return ['picchi-category'];
     }
     // For Searching Widget 
 	public function get_keywords() {
