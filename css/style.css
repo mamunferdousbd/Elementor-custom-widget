@@ -1,11 +1,11 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 
@@ -14,49 +14,49 @@ body {
 =================== */
 
 .banner {
-  text-align: center;
-  color: #fff;
+    text-align: center;
+    color: #fff;
 }
 
 .banner h4 {
-  font-weight: 400;
-  margin-bottom: 0;
+    font-weight: 400;
+    margin-bottom: 0;
 }
 
 .banner h1 {
-  font-size: 50px;
-  text-transform: capitalize;
-  margin: 20px;
-  font-weight: 600;
+    font-size: 50px;
+    text-transform: capitalize;
+    margin: 20px;
+    font-weight: 600;
 }
 
 .banner p {
-  color: #bbb;
-  font-size: 18px;
+    color: #bbb;
+    font-size: 18px;
 }
 
 .banner a {
-  margin: 0 5px;
+    margin: 0 5px;
 }
 
 .box_btn {
-  display: inline-block;
-  background-color: tomato;
-  color: #fff;
-  padding: 10px 30px;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 7px;
+    display: inline-block;
+    background-color: tomato;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 7px;
 }
 
 .border_btn {
-  display: inline-block;
-  color: #fff;
-  border: 1px solid tomato;
-  border-radius: 7px;
-  padding: 9px 30px;
-  font-size: 18px;
-  font-weight: 500;
+    display: inline-block;
+    color: #fff;
+    border: 1px solid tomato;
+    border-radius: 7px;
+    padding: 9px 30px;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 
@@ -65,61 +65,61 @@ body {
 ======================= =*/
 
 .section-title h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #777;
-  margin-bottom: -10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: -10px;
 }
 
 .section-title h2 {
-  font-size: 32px;
-  text-transform: capitalize;
-  margin: 15px 0;
-  display: inline-block;
-  position: relative;
-  font-weight: 700;
-  padding-bottom: 15px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+    font-size: 32px;
+    text-transform: capitalize;
+    margin: 15px 0;
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .section-title p {
-  font-weight: 300;
-  font-size: 14px;
+    font-weight: 300;
+    font-size: 14px;
 }
 
 .black-bg .section-title h2,
 .black-bg .section-title h4,
 .black-bg .section-title p {
-  color: #fff
+    color: #fff
 }
 
 .section-title h2:before {
-  position: absolute;
-  content: " ";
-  width: 150px;
-  height: 1px;
-  background-color: #777;
-  bottom: 0;
-  left: 50%;
-  margin-left: -75px;
+    position: absolute;
+    content: " ";
+    width: 150px;
+    height: 1px;
+    background-color: #777;
+    bottom: 0;
+    left: 50%;
+    margin-left: -75px;
 }
 
 .section-title h2:after {
-  position: absolute;
-  content: " ";
-  width: 80px;
-  height: 3px;
-  background-color: #e16038;
-  border: darkblue;
-  bottom: -1px;
-  left: 50%;
-  margin-left: -40px;
+    position: absolute;
+    content: " ";
+    width: 80px;
+    height: 3px;
+    background-color: #e16038;
+    border: darkblue;
+    bottom: -1px;
+    left: 50%;
+    margin-left: -40px;
 }
 
 .section-title {
-  margin-bottom: 70px;
-  text-align: center;
+    margin-bottom: 70px;
+    text-align: center;
 }
 
 
@@ -128,376 +128,476 @@ body {
 ======================= =*/
 
 .single-about i {
-  font-size: 25px;
+    font-size: 25px;
 }
 
 .single-about h4 {
-  margin: 20px 0;
-  font-weight: 500;
-  text-transform: capitalize;
-  font-size: 22px;
+    margin: 20px 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 22px;
 }
 
 .single-about a {
-  text-transform: capitalize;
-  margin-top: 10px;
-  display: inline-block;
-  color: tomato;
+    text-transform: capitalize;
+    margin-top: 10px;
+    display: inline-block;
+    color: tomato;
 }
 
 .single-about i {
-  font-size: 36px;
+    font-size: 36px;
 }
-.pt-100{
-  padding-top: 100px;
+
+.pt-100 {
+    padding-top: 100px;
 }
 
 .about-text h4 {
-  text-transform: capitalize;
-  font-size: 28px;
-  margin-bottom: 10px;
-  font-weight: 700;
+    text-transform: capitalize;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .about-text p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .about-text ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-  float: left;
-  width: 50%;
-  margin: 15px 0;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    float: left;
+    width: 50%;
+    margin: 15px 0;
 }
 
 .about-text ul li {
-  margin-bottom: 10px;
-  color: #646f79;
-  font-size: 14px;
+    margin-bottom: 10px;
+    color: #646f79;
+    font-size: 14px;
 }
 
 .about-text ul li,
 .single-feature ul li {
-  margin-bottom: 10px;
-  color: #646f79;
-  font-size: 14px;
+    margin-bottom: 10px;
+    color: #646f79;
+    font-size: 14px;
 }
 
 .about-text ul li i,
 .single-feature ul li i {
-  padding-right: 5px;
-  color: #646f79
+    padding-right: 5px;
+    color: #646f79
 }
 
 .about-text a {
-  margin-top: 20px;
-  color: #FFF;
-  background-color: #e16038;
-  padding: 10px 30px;
-  border-radius: 7px;
+    margin-top: 20px;
+    color: #FFF;
+    background-color: #e16038;
+    padding: 10px 30px;
+    border-radius: 7px;
 }
 
 .about-img img {
-  width: 100%;
+    width: 100%;
 }
 
 .about-img {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .about-img:before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: tomato;
-  z-index: -1;
-  right: -10px;
-  bottom: -10px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: tomato;
+    z-index: -1;
+    right: -10px;
+    bottom: -10px;
 }
+
+
 /*==========================
  Features Area CSS 
  ==========================*/
 
 .single-feature ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-  float: left;
-  width: 50%;
-  margin: 15px 0;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    float: left;
+    width: 50%;
+    margin: 15px 0;
 }
+
 .features {
-  position: relative;
-  background-color: #f8f9fa;
+    position: relative;
+    background-color: #f8f9fa;
 }
+
 .features-1::before {
-	position: absolute;
-	content: "";
-	width: 50%;
-	height: 100%;
-	right: 0;
-	top: 0;
-	background-size: cover;
-	background-position: center;
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
 }
+
 .features-2::before {
-	position: absolute;
-	content: "";
-	width: 50%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background-size: cover;
-	background-position: center;
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
 }
+
 .features-1 {
-  position: relative;
+    position: relative;
 }
+
 .single-feature {
-	padding: 100px;
-	overflow: hidden;
+    padding: 100px;
+    overflow: hidden;
 }
+
 .single-feature h4 {
-	text-transform: uppercase;
-	font-size: 34px;
-	position: relative;
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-	font-weight: 700;
+    text-transform: uppercase;
+    font-size: 34px;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    font-weight: 700;
 }
+
 .single-feature h4:before {
-  position: absolute;
-  content: "";
-  width: 40px;
-  height: 2px;
-  background-color: tomato;
-  bottom: 0;
-  left: 50%;
-  margin-left: -20px;
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 2px;
+    background-color: tomato;
+    bottom: 0;
+    left: 50%;
+    margin-left: -20px;
 }
+
 .single-feature p {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 .features-1::after {
-	position: absolute;
-	content: "";
-	width: 50%;
-	height: 100%;
-	right: 0;
-	top: 0;
-	background-color: #333;
-	opacity: .8;
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: #333;
+    opacity: .8;
 }
+
 .features-2::after {
-	position: absolute;
-	content: "";
-	width: 50%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background-color: #333;
-	opacity: .8;
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #333;
+    opacity: .8;
 }
+
 .single-feature h6 {
-	color: #777;
-	text-transform: lowercase;
-	font-size: 16px;
-	font-weight: 300;
-	margin-bottom: 10px;
+    color: #777;
+    text-transform: lowercase;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
 }
+
 .feature-box h5 {
-	font-size: 22px;
-	text-transform: capitalize;
-	font-weight: 600;
-	margin: 15px 0;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 15px 0;
 }
+
 .feature-box {
-  text-align: left;
-  margin: 25px 0;
+    text-align: left;
+    margin: 25px 0;
 }
+
 .feature-box i {
-  font-size: 25px;
+    font-size: 25px;
 }
+
 .single-feature a.box-btn {
-	margin-top: 30px;
+    margin-top: 30px;
 }
-.ml-auto{
-  margin-left: auto;
+
+.ml-auto {
+    margin-left: auto;
 }
+
+
 /*==========================
  Services Area CSS 
  ==========================*/
- .single-service i {
-  font-size: 35px;
+
+.single-service i {
+    font-size: 35px;
 }
+
 .single-service h4 {
-	margin: 30px 0;
-	font-size: 20px;
-	font-weight: 700;
-	position: relative;
+    margin: 30px 0;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
 }
+
 .single-service {
-	margin-bottom: 10px;
-	text-align: left;
-	box-shadow: 0 15px 40px #ededed;
-	padding:10px 40px;
+    margin-bottom: 10px;
+    text-align: left;
+    box-shadow: 0 15px 40px #ededed;
+    padding: 10px 40px;
 }
+
 .single-service p {
-	color: #646f79;
-	line-height: 26px;
-	font-size: 14px;
-	font-weight:400
+    color: #646f79;
+    line-height: 26px;
+    font-size: 14px;
+    font-weight: 400
 }
+
+
 /*==========================
  Process Area CSS 
  ==========================*/
- .single-process h6 {
-  background-color: #e67e22;
-  color: #fff;
-  display: inline-block;
-  padding: 10px 20px;
-  text-transform: capitalize;
-  font-size: 20px;
-  position: relative;
-  text-align: left;
-  width: 100%;
-  border-radius: 5px;
-  font-weight: 500;
-  margin-bottom: 20px;
+
+.single-process h6 {
+    background-color: #e67e22;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
+
 .single-process h6 span {
-  background-color: #d35400;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50px;
-  height: 100%;
-  line-height: 45px;
-  text-align: center;
-  font-size: 20px;
+    background-color: #d35400;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    line-height: 45px;
+    text-align: center;
+    font-size: 20px;
 }
+
+
 /*========================
  Portfolio Area CSS 
  =========================*/
 
 .portfolio-menu button {
-	background-color: transparent;
-	border: 0px;
-	cursor: pointer;
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
 }
 
 .portfolio-content h3 a i {
-	display: block;
-	margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .single-portfolio {
-	position: relative;
+    position: relative;
 }
 
 .single-portfolio img {
-	width: 100%;
+    width: 100%;
 }
 
 .single-portfolio:hover .portfolio-hover {
-	-webkit-transform: scale(1);
-	        transform: scale(1)
+    -webkit-transform: scale(1);
+    transform: scale(1)
 }
+
 .portfolio-hover {
-	position: absolute;
-	left: 0;
-	top: 0;
-	text-align: center;
-	width: 100%;
-	height: 100%;
-	-webkit-transform: scale(0);
-	        transform: scale(0);
-	-webkit-transition: .5s;
-	transition: .5s
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: .5s;
+    transition: .5s
 }
 
 .portfolio-content {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 100%;
-	height: auto;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #fff;
 }
 
 .portfolio-hover:before {
-	position: absolute;
-	content: "";
-	width: 100%;
-	height: 100%;
-	background-color: black;
-	left: 0;
-	top: 0;
-	opacity: .85;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    left: 0;
+    top: 0;
+    opacity: .85;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
 }
 
 .portfolio-content h3 a {
-	color: #fff;
-	font-size: 20px;
-	text-transform: capitalize;
-	margin: 0px;
-	display: block;
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 0px;
+    display: block;
 }
 
 .portfolio-content h3 a span {
-	display: block;
-	font-weight: 300;
-	font-size: 15px;
-	margin-top: 7px;
+    display: block;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 7px;
 }
 
 .portfolio-content h3 a i.fa {
-	display: block;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	border: 1px solid #fff;
-	line-height: 40px;
-	margin: 0 auto;
-	margin-bottom: 10px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    line-height: 40px;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .portfolio-menu {
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .portfolio-menu buttton {
-	background-color: #635CDB;
-	border: 0px;
+    background-color: #635CDB;
+    border: 0px;
 }
 
 .portfolio-menu button {
-	background-color: transparent;
-	border: 1px solid #635CDB;
-	color: black;
-	padding: 3px 15px;
-	cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #635CDB;
+    color: black;
+    padding: 3px 15px;
+    cursor: pointer;
 }
 
 .portfolio-menu button.active {
-	background-color: #635CDB;
-	color: #fff;
+    background-color: #635CDB;
+    color: #fff;
 }
-.no-gutters .col-md-4{
-  padding: 0;
+
+.no-gutters .col-md-4 {
+    padding: 0;
 }
+
+
 /*========================
  Counter Area CSS 
  =========================*/
 
+.counter-title {
+    display: flex;
+    flex-basis: 60%;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
+.counter-title h2 {
+    text-transform: uppercase;
+    font-size: 32px;
+    display: block;
+    font-weight: 700;
+    position: relative;
+    color: #fff;
+}
 
+.counter-title h2 span {
+    display: block;
+    font-size: 20px;
+    text-transform: lowercase;
+}
 
+.counter-title p {
+    flex-basis: 40%;
+    margin-left: 30px;
+    color: #fff;
+}
 
+.counter-title h2::before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 2px;
+    background-color: #ddd;
+    right: -55px;
+    transform: rotate(90deg);
+    top: 32px;
+}
+
+.single-counter {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #333;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 3px;
+    justify-content: center;
+}
+
+.single-counter i {
+    font-size: 30px;
+    margin-right: 15px;
+    border: 1px solid #333;
+    padding: 14px;
+    border-radius: 50%;
+}
+
+.single-counter h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.single-counter h4 span {
+    display: block;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
