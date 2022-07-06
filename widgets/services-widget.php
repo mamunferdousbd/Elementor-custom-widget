@@ -178,133 +178,154 @@ class Services_widget extends \Elementor\Widget_Base{
 
             ]
         );
+		// Icon Style 
+		$this->add_control(
+			'services_icons_style',
+			[
+				'label' => esc_html__( 'Icon Style', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+		//  Services  Icon Color
+        $this->add_control(
+			'services_icon_color',
+			[
+				'label' => esc_html__( 'Icon Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#000',
+				'selectors' => [
+					'{{WRAPPER}} .single-service i' => 'color: {{VALUE}}',
+				],
+			]
+		);
+		// Services  Icon Font Size
+		$this->add_control(
+			'services_icon_font_size',
+			[
+				'label' => esc_html__( 'Icon Font Size', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' =>18,
+						'max' => 40,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 18,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .single-service i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		// Number Style 
+		$this->add_control(
+			'services_number_style',
+			[
+				'label' => esc_html__( 'Number Style', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
 
-        // Section Sub Title
+		//  Services  Number Color
         $this->add_control(
-			'heading_sub_title',
+			'services_number_color',
 			[
-				'label' => esc_html__( 'Sub Title', 'picchi-extension' ),
+				'label' => esc_html__( 'Number Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#000',
+				'selectors' => [
+					'{{WRAPPER}} .single-service span' => 'color: {{VALUE}}',
+				],
+			]
+		);
+		// Services  Number Typography
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'services_number_typography',
+				'selector' => '{{WRAPPER}} .single-service span',
+			]
+		);
+		// Image
+		
+
+        
+
+        //  Services  Title
+        $this->add_control(
+			'services_title_style',
+			[
+				'label' => esc_html__( 'Title Style', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
         
-        // Sub Heading Color
+        // Services Title  Color
         $this->add_control(
-			'heading_sub_title_color',
+			'services_title_color',
 			[
 				'label' => esc_html__( 'Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#fff',
+                'default'=>'#000',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h4' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-service h4' => 'color: {{VALUE}}',
 				],
 			]
 		);
-        // Sub Heading typography
+        // Services Title typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'heading_sub_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h4',
+				'name' => 'services_title_typography',
+				'selector' => '{{WRAPPER}} .single-service h4',
 			]
 		);
-        // Section Heading Title
-        $this->add_control(
-			'heading_title',
-			[
-				'label' => esc_html__( 'Heading', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
+
         
-        // Heading Color
+
+
+        // Services Description
         $this->add_control(
-			'heading_title_color',
+			'services_description_style',
 			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#fff',
-				'selectors' => [
-					'{{WRAPPER}} .section-title h2' => 'color: {{VALUE}}',
-				],
-			]
-		);
-        //  Heading Typography
-        $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'heading_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h2',
-			]
-		);
-        // Border 
-        $this->add_control(
-			'heading_border_style',
-			[
-				'label' => esc_html__( 'Border', 'picchi-extension' ),
+				'label' => esc_html__( 'Description Style', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
 		);
-        // border One Background Color
+
+
+        // Services Description Color
         $this->add_control(
-			'heading_border1_color',
+			'services_description_color',
 			[
 				'label' => esc_html__( 'Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
                 'default'=>'#777',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h2::before' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-        // border Two Background Color
-        $this->add_control(
-			'heading_border2_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#e16038',
-				'selectors' => [
-					'{{WRAPPER}} .section-title h2::after' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
-
-
-        // Description
-        $this->add_control(
-			'heading_des_style',
-			[
-				'label' => esc_html__( 'Description', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-
-        // Description Color
-        $this->add_control(
-			'section_des_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#FFF',
-				'selectors' => [
-					'{{WRAPPER}} .section-title p' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-service p' => 'color: {{VALUE}}',
 				],
 			]
 		);
     
-        // Description Typography
+        // Services Description Typography
         
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'section-title_dsc_typography',
-				'selector' => '{{WRAPPER}} .section-title p',
+				'name' => 'services_description_typography',
+				'selector' => '{{WRAPPER}} .single-service p',
 			]
 		);
         
