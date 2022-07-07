@@ -319,6 +319,45 @@ class Counter_widget extends \Elementor\Widget_Base{
                 'prefix_class'=>'picchi_card_shape-',
 			]
 		);
+        // Icon Size
+        $this->add_control(
+			'card_icon_size',
+			[
+				'label' => esc_html__( 'Icon Size', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 20,
+						'max' => 80,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 30,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .single-counter i' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+        // Icon Padding
+        $this->add_control(
+			'card_icon_padding',
+			[
+				'label' => esc_html__( 'Padding', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .single-counter i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
         // Card Number Color
         $this->add_control(
             'counter_card_number_color',
