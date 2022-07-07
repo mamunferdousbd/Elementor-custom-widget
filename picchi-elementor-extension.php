@@ -254,6 +254,7 @@ final class Elementor_Picchi_Extension {
 		require_once( __DIR__ . '/widgets/process-widget.php' );
 		require_once( __DIR__ . '/widgets/projects-widget.php' );
 		require_once( __DIR__ . '/widgets/counter-widget.php' );
+		require_once( __DIR__ . '/widgets/team-widget.php' );
 
 		// added by EWA - EWA own Register widgets, loading all widget names
 
@@ -266,6 +267,7 @@ final class Elementor_Picchi_Extension {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Process_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Projects_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Counter_widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Team_widget() );
 
 	}
 
