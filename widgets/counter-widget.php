@@ -35,59 +35,101 @@ class Counter_widget extends \Elementor\Widget_Base{
 
             ]
         );
+        // Counter Title
+        $this->add_control(
+            'counter_title',
+            [
+                'label'=>esc_html__( 'Title','picchi-extension' ),
+                'type'=>  \Elementor\Controls_Manager::TEXT,
+                'placeholder'=>esc_html__('Write Title Here.','picchi-extension'),
+                'seperator'=>'after',
+                'label_block'=>true,
+            ]
+        );
+
+        // Counter sub Title
+        $this->add_control(
+            'counter_sub_title',
+            [
+                'label'=>esc_html__( 'Sub Title','picchi-extension' ),
+                'type'=>  \Elementor\Controls_Manager::TEXT,
+                'placeholder'=>esc_html__('Write Sub Title Here.','picchi-extension'),
+                'seperator'=>'after',
+                'label_block'=>true,
+            ]
+        );
+        // Counter Description
+        $this->add_control(
+            'counter_description',
+            [
+                'label'=>esc_html__( 'Description','picchi-extension' ),
+                'type'=>  \Elementor\Controls_Manager::TEXTAREA,
+                'dynamic' => [
+					'active' => true,
+				],
+                'rows'=>10,
+                'placeholder'=>esc_html__('Write Your Description Here.','picchi-extension'),
+                'seperator'=>'after',
+                'label_block'=>true,
+            ]
+        );
 		//  Counter Repeater
         $repeater = new \Elementor\Repeater();
-		// Projecct Main Image
+		// Counter Icon
 		$repeater->add_control(
-			'Counter_main_image',
+			'counter_icon',
 			[
-				'label' => esc_html__( 'Counter Main Image', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'label_block'=>true,
-				'sepertaor'=>'before',
-				'placeholder' => esc_html__( 'Add Main Image', 'picchi-extension' ),
-				
-				
+		   
+                'label' => esc_html__( 'Icon', 'picchi-extension' ),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => 'fas fa-circle',
+                    'library' => 'fa-solid',
+                ],
+                'recommended' => [
+                    'fa-solid' => [
+                        'circle',
+                        'dot-circle',
+                        'square-full',
+                    ],
+                    'fa-regular' => [
+                        'circle',
+                        'dot-circle',
+                        'square-full',
+                    ],
+                ],
+                    
 			]
 		);
-		// Projecct Small Image
-		$repeater->add_control(
-			'Counter_lightbox_image',
-			[
-				'label' => esc_html__( 'Counter lightbox Image', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
-				'label_block'=>true,
-				'sepertaor'=>'before',
-				'placeholder' => esc_html__( 'Choose lightbox Image', 'picchi-extension' ),
-				
-				
-			]
-		);
-		// Counter Title
+		
+		// Counter Number
         $repeater->add_control(
-			'Counter_title', [
-				'label' => esc_html__( 'Counter Title', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'Add Counter Title' , 'picchi-extension' ),
+			'counter_number', [
+				'label' => esc_html__( 'Number', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 5,
+				'max' => 1000,
+				'step' => 5,
+				'default' => 500,
 				'label_block' => true,
 			]
 		);
 		// Counter Category
         $repeater->add_control(
-			'Counter_cat', [
-				'label' => esc_html__( 'Counter Category', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'Add Counter Category' , 'picchi-extension' ),
+			'counter_cat', [
+				'label' => esc_html__( 'Category', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Add  Category' , 'picchi-extension' ),
 				'label_block' => true,
 			]
 		);
 		$this->add_control(
-			'Counter_list',
+			'counter_list',
 			[
 				'label' => esc_html__( 'Repeater List', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
-				'title_field' => '{{{ Counter_title }}}',
+				'title_field' => '{{{ counter_cat }}}',
 			]
 		);
 
@@ -98,198 +140,310 @@ class Counter_widget extends \Elementor\Widget_Base{
         /*===================
             Style Tab
         ===================== */
+
+        /*====================
+            Title Styling 
+        ======================*/
         $this->start_controls_section(
-            'style_section',
+            'counter_title_style',
             [
-                'label'=>esc_html__( 'Style','picchi-extension' ),
+                'label'=>esc_html__( 'Title Style','picchi-extension' ),
                 'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
 
             ]
         );
-        // Section Sub Title
+        // Tilte Color
         $this->add_control(
-			'heading_sub_title',
-			[
-				'label' => esc_html__( 'Sub Title', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-        
-        // Sub Heading Color
-        $this->add_control(
-			'heading_sub_title_color',
+			'counter_title_color',
 			[
 				'label' => esc_html__( 'Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
                 'default'=>'#777',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h4' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .counter-title h2' => 'color: {{VALUE}}',
 				],
 			]
 		);
-        // Sub Heading typography
+        // Tilte Typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'heading_sub_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h4',
+				'name' => 'counter_title_typography',
+				'selector' => '{{WRAPPER}} .counter-title h2',
 			]
 		);
-        // Section Heading Title
+
+        $this->end_controls_section();
+        /*=============================
+            Sub Title Styling
+        =============================*/
+        $this->start_controls_section(
+            'counter_sub_title_style',
+            [
+                'label'=>esc_html__( 'Sub Title Style','picchi-extension' ),
+                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+
+            ]
+        );
+        // Sub Title Color
         $this->add_control(
-			'heading_title',
-			[
-				'label' => esc_html__( 'Heading', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-        
-        // Heading Color
-        $this->add_control(
-			'heading_title_color',
+            'counter_sub_title_color',
 			[
 				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#777',
+				'selectors' => [
+					'{{WRAPPER}} .counter-title h2 span' => 'color: {{VALUE}}',
+				],
+			]
+
+        );
+        // Sub Title Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'counter_sub_title_typography',
+				'selector' => '{{WRAPPER}} .counter-title h2 span',
+			]
+		);
+        $this->end_controls_section();
+        /*=============================
+            Divider Styling
+        =============================*/
+        $this->start_controls_section(
+            'counter_divider_style',
+            [
+                'label'=>esc_html__( 'Divider Style','picchi-extension' ),
+                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+
+            ]
+        );
+        $this->add_control(
+            'counter_border_color',
+            [
+                'label' => esc_html__( 'Color', 'picchi-extension' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#777',
+                'selectors' => [
+                    '{{WRAPPER}} .counter-title h2::before' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        /*=============================
+            Description Styling
+        =============================*/
+        $this->start_controls_section(
+            'counter_description_style',
+            [
+                'label'=>esc_html__( 'Description Style','picchi-extension' ),
+                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+
+            ]
+        );
+        // Description Color
+        $this->add_control(
+            'counter_description_color',
+			[
+				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#777',
+				'selectors' => [
+					'{{WRAPPER}} .counter-title p' => 'color: {{VALUE}}',
+				],
+			]
+
+        );
+        // Description Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'counter_description_typography',
+				'selector' => '{{WRAPPER}} .counter-title p',
+			]
+		);
+        $this->end_controls_section();
+        /*=============================
+            Counter Card Styling
+        =============================*/
+        
+        $this->start_controls_section(
+            'counter_card_style',
+            [
+                'label'=>esc_html__( 'Counter Card Style','picchi-extension' ),
+                'tab'=> \Elementor\Controls_Manager::TAB_STYLE,
+
+            ]
+        );
+        // Card Background
+        $this->add_control(
+            'counter_card_bg_color',
+			[
+				'label' => esc_html__( 'Card Background color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#fff',
+				'selectors' => [
+					'{{WRAPPER}} .single-counter' => 'background-color: {{VALUE}}',
+				],
+			]
+
+        );
+        // Card Icon Color
+        $this->add_control(
+            'counter_card_icon_color',
+			[
+				'label' => esc_html__( 'Card Icon color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
                 'default'=>'#000',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h2' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .single-counter i' => 'color: {{VALUE}}',
+				],
+			]
+
+        );
+        // Card Icon Shape
+        $this->add_control(
+			'counter_card_icon_shape',
+			[
+				'label' => esc_html__( 'Icon Shape', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'default',
+				'options' => [
+					'default'  => esc_html__( 'default', 'picchi-extension' ),
+					'square' => esc_html__( 'Square', 'picchi-extension' ),
+					'frame' => esc_html__( 'Framed', 'picchi-extension' ),
+					
+				],
+                'prefix_class'=>'picchi_card_shape-',
+			]
+		);
+        // Icon Size
+        $this->add_control(
+			'card_icon_size',
+			[
+				'label' => esc_html__( 'Icon Size', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range' => [
+					'px' => [
+						'min' => 20,
+						'max' => 80,
+						'step' => 5,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 30,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .single-counter i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
-        //  Heading Typography
-        $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
+        // Icon Padding
+        $this->add_control(
+			'card_icon_padding',
 			[
-				'name' => 'heading_title_typography',
-				'selector' => '{{WRAPPER}} .section-title h2',
+				'label' => esc_html__( 'Padding', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .single-counter i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
-        // Border 
+        // Card Number Color
         $this->add_control(
-			'heading_border_style',
+            'counter_card_number_color',
 			[
-				'label' => esc_html__( 'Border', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-        // border One Background Color
-        $this->add_control(
-			'heading_border1_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
+				'label' => esc_html__( 'Number Color', 'picchi-extension' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
                 'default'=>'#777',
 				'selectors' => [
-					'{{WRAPPER}} .section-title h2::before' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .single-counter h4 span' => 'color: {{VALUE}}',
 				],
 			]
-		);
-        // border Two Background Color
-        $this->add_control(
-			'heading_border2_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#e16038',
-				'selectors' => [
-					'{{WRAPPER}} .section-title h2::after' => 'background-color: {{VALUE}}',
-				],
-			]
-		);
 
-
-        // Description
-        $this->add_control(
-			'heading_des_style',
-			[
-				'label' => esc_html__( 'Description', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-
-        // Description Color
-        $this->add_control(
-			'section_des_color',
-			[
-				'label' => esc_html__( 'Color', 'picchi-extension' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-                'default'=>'#333',
-				'selectors' => [
-					'{{WRAPPER}} .section-title p' => 'color: {{VALUE}}',
-				],
-			]
-		);
-    
-        // Description Typography
-        
+        );
+        // Card Number Typography
         $this->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[
-				'name' => 'section-title_dsc_typography',
-				'selector' => '{{WRAPPER}} .section-title p',
+				'name' => 'counter_card_number_typography',
+				'selector' => '{{WRAPPER}} .single-counter h4 span',
 			]
 		);
-        
+        // Card Category Color
+        $this->add_control(
+            'counter_card_cat_color',
+			[
+				'label' => esc_html__( ' Category Color', 'picchi-extension' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+                'default'=>'#777',
+				'selectors' => [
+					'{{WRAPPER}} .single-counter h4 ' => 'color: {{VALUE}}',
+				],
+			]
 
-
-        
-        
+        );
+        // Card Category Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'counter_card_cat_typography',
+				'selector' => '{{WRAPPER}} .single-counter h4 ',
+			]
+		);
 
 
         $this->end_controls_section();
         
 
-        
 
-        
     }
 
     protected function render(){
         $settings = $this->get_settings_for_display();
-        // $section_title_sub_heading = $settings['section_title_sub_heading'];
-        // $section_title_heading = $settings['section_title_heading'];
-        // $section_title_description = $settings['section_title_description'];
+        $counter_title = $settings['counter_title'];
+        $counter_sub_title = $settings['counter_sub_title'];
+        $counter_description = $settings['counter_description'];
         
 
         ?>
            <div class="row align-items-center">
+
 				<div class="col-xl-5">
 					<div class="counter-title">
-						<h2><span> span What's your story?</span> Fun Facts</h2>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+						<h2><span><?php echo $counter_sub_title;?></span><?php echo $counter_title;?></h2>
+						<p><?php echo $counter_description;?></p>
 					</div>
 				</div>
+
 				<div class="col-xl-7">
 					<div class="row">
+                        <?php
+                            if ( $settings['counter_list'] ) {
+                            foreach (  $settings['counter_list'] as $item ) {
+                        ?>
+
 						<div class="col-xl-6">
 							<div class="single-counter">
-								<i class="fas fa-briefcase"></i>
-								<h4><span class="counter">543</span> projects</h4>
+								<i class="<?php echo $item['counter_icon']['value'];?>"></i>
+								<h4><span class="counter"><?php echo $item['counter_number'];?></span><?php echo $item['counter_cat'];?></h4>
 							</div>
 						</div>
-						<div class="col-xl-6">
-							<div class="single-counter">
-								<i class="fas fa-briefcase"></i>
-								<h4><span class="counter">543</span> projects</h4>
-							</div>
-						</div>
-						<div class="col-xl-6">
-							<div class="single-counter">
-								<i class="fas fa-briefcase"></i>
-								<h4><span class="counter">543</span> projects</h4>
-							</div>
-						</div>
-						<div class="col-xl-6">
-							<div class="single-counter">
-								<i class="fas fa-briefcase"></i>
-								<h4><span class="counter">543</span> projects</h4>
-							</div>
-						</div>
+
+                        <?php
+                            }
+                        }
+                        ?>
+
 
 					</div>
 				</div>
