@@ -253,6 +253,7 @@ final class Elementor_Picchi_Extension {
 		require_once( __DIR__ . '/widgets/services-widget.php' );
 		require_once( __DIR__ . '/widgets/process-widget.php' );
 		require_once( __DIR__ . '/widgets/projects-widget.php' );
+		require_once( __DIR__ . '/widgets/counter-widget.php' );
 
 		// added by EWA - EWA own Register widgets, loading all widget names
 
@@ -264,6 +265,7 @@ final class Elementor_Picchi_Extension {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Services_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Process_widget() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Projects_widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Counter_widget() );
 
 	}
 
@@ -303,8 +305,18 @@ final class Elementor_Picchi_Extension {
 
     // Custom JS
 	public function widget_scripts() {
-		wp_register_script( 'picchi-extension-js', plugins_url( 'main.js', __FILE__ ) );
+		wp_register_script( 'picchi-extension-js', plugins_url( 'js/main.js', __FILE__ ) );
+
+		wp_register_script( 'picchi-extension-waypointjs', plugins_url( 'js/waypoint.min.js', __FILE__ ) );
+
+		wp_register_script( 'picchi-extension-counterupjs', plugins_url( 'js/counterup.min.js', __FILE__ ) );
+
+		
+
 		wp_enqueue_script('picchi-extension-js');
+		wp_enqueue_script('picchi-extension-waypointjs');
+		wp_enqueue_script('picchi-extension-counterupjs');
+		
 	}
 
     // Custom Category
